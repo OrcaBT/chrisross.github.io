@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chris Ross — Payroll Ops, Analytics & Automation</title>
-  <meta name="description" content="Chris Ross — Payroll operations, analytics, and automation across ADP, Ceridian, and SAP SuccessFactors. Power BI, Power Query, VBA, PowerShell." />
+  <title>Chris Ross — HR Digital Ops, Analytics & Automation</title>
+  <meta name="description" content="Chris Ross — HR digital + operations solutions: payroll platforms, data flows, dashboards, automation, and AI/ML prototypes." />
 
   <style>
     /* ============ THEME TOKENS ============ */
@@ -17,9 +17,10 @@
       --shadow: 0 12px 40px rgba(0,0,0,.10);
       --shadow2: 0 20px 60px rgba(0,0,0,.14);
       --radius: 20px;
-      --max: 1100px;
+      --max: 1120px;
       --accent:#0a84ff;
       --accent2:#7c3aed;
+
       --glass: rgba(255,255,255,.75);
       --glass2: rgba(255,255,255,.92);
       --glow: rgba(10,132,255,.14);
@@ -33,6 +34,7 @@
       --card:#12151b;
       --shadow: 0 12px 45px rgba(0,0,0,.40);
       --shadow2: 0 20px 70px rgba(0,0,0,.55);
+
       --glass: rgba(11,13,16,.65);
       --glass2: rgba(18,21,27,.85);
       --glow: rgba(10,132,255,.18);
@@ -81,14 +83,11 @@
       font-size:14px; color:var(--muted);
       align-items:center;
     }
-    .nav-links a{
-      padding:8px 10px; border-radius:12px;
-    }
+    .nav-links a{padding:8px 10px; border-radius:12px}
     .nav-links a:hover{background:rgba(0,0,0,.05); color:var(--text)}
     [data-theme="dark"] .nav-links a:hover{background:rgba(255,255,255,.06)}
-    .nav-cta{
-      display:flex; gap:8px; flex-wrap:wrap; align-items:center;
-    }
+
+    .nav-cta{display:flex; gap:8px; flex-wrap:wrap; align-items:center}
 
     /* ============ BUTTONS ============ */
     .btn{
@@ -100,6 +99,7 @@
       font-weight:650; font-size:13px;
       transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
       white-space:nowrap;
+      color: var(--text); /* important: button text follows theme */
     }
     .btn:hover{transform: translateY(-1px); box-shadow: var(--shadow2)}
     .btn.primary{
@@ -166,7 +166,7 @@
     .mini{display:flex; flex-direction:column; gap:6px; width:100%}
     .mini strong{font-size:16px}
 
-    /* ============ APPLE-ISH PROJECT CARDS ============ */
+    /* ============ PROJECT CARDS ============ */
     .proj{
       position:relative;
       overflow:hidden;
@@ -187,7 +187,6 @@
     }
     .proj .top{display:flex; align-items:flex-start; justify-content:space-between; gap:10px}
     .proj h3{margin:0; font-size:16px}
-    .proj a.link{color:var(--accent); font-weight:700; font-size:13px}
     .list{margin:10px 0 0; padding-left:18px; color:var(--muted); font-size:14px}
     .list li{margin:6px 0}
 
@@ -218,6 +217,7 @@
       user-select:none;
       font-weight:650;
       font-size:13px;
+      color: var(--text); /* important: follows theme */
     }
     .toggle:active{transform: translateY(1px)}
     .kbd{
@@ -259,7 +259,7 @@
         <a class="btn" href="https://www.linkedin.com/in/chris-ross-942a5017/" target="_blank" rel="noreferrer">LinkedIn</a>
         <a class="btn primary" href="mailto:CR.ChrisRoss@gmail.com">Email</a>
         <button id="themeBtn" class="toggle" type="button" aria-label="Toggle theme">
-          <span id="themeIcon">☾</span>
+          <span id="themeIcon" aria-hidden="true">☾</span>
           <span id="themeLabel">Dark</span>
         </button>
       </div>
@@ -271,18 +271,18 @@
     <section class="hero">
       <div class="grid hero-grid">
         <div>
-          <div class="pill">Toronto, ON · Payroll Ops · Analytics & Automation</div>
-          <h1>Payroll operations, made reliable — and measurable.</h1>
+          <div class="pill">Toronto, ON · HR Digital & Operations Solutions</div>
+          <h1>HR operations, improved with data, automation, and practical AI.</h1>
           <p class="sub">
-            I have experience managing operations across ADP, Ceridian, and SAP SuccessFactors, with a focus on clean data,
-            stable SFTP file exchanges, and dependable end-to-end workflows. I build Power BI dashboards from payroll
-            datasets, automate recurring tasks with Power Query, and use VBA and PowerShell scripts to validate,
-            transform, and reconcile data so teams move faster with fewer exceptions.
+            I build reliable HR operations solutions—owning payroll platforms and data flows (ADP, Ceridian,
+            SAP SuccessFactors + SFTP), turning HR and payroll data into clear Power BI dashboards, and automating
+            recurring work with Power Query, VBA, and PowerShell. I also build lightweight AI/ML prototypes to
+            improve how teams find answers and make decisions.
           </p>
 
           <div class="metrics" style="margin-top:16px">
-            <div class="metric"><strong>Payroll Platforms</strong><span>ADP · Ceridian · SAP SuccessFactors</span></div>
-            <div class="metric"><strong>Data Operations</strong><span>SFTP feeds · controls · reconciliation</span></div>
+            <div class="metric"><strong>HR Ops Platforms</strong><span>ADP · Ceridian · SAP SuccessFactors</span></div>
+            <div class="metric"><strong>Data Reliability</strong><span>SFTP feeds · controls · reconciliation</span></div>
             <div class="metric"><strong>Analytics + Automation</strong><span>Power BI · Power Query · VBA · PowerShell</span></div>
           </div>
 
@@ -301,8 +301,8 @@
           <img class="avatar" src="assets/chris-ross.png" alt="Chris Ross headshot" />
           <div class="mini">
             <strong>Chris Ross</strong>
-            <div class="meta">Payroll Operations · Analytics · Automation</div>
-            <div class="meta">ADP · Ceridian · SAP SuccessFactors · SFTP</div>
+            <div class="meta">HR Digital Ops · Analytics · Automation</div>
+            <div class="meta">Payroll systems · Data flows · Dashboards</div>
           </div>
           <div class="tags" style="justify-content:center">
             <span class="tag">Reliability</span>
@@ -316,7 +316,7 @@
     <!-- PROJECTS -->
     <section id="projects" class="section">
       <div class="section-title">
-        <h2>Projects</h2><span>Selected work themes (swap in links anytime)</span>
+        <h2>Projects</h2><span>Operations + digital builds</span>
       </div>
 
       <div class="grid cols-3">
@@ -326,8 +326,6 @@
               <h3>Payroll Data Flows</h3>
               <p class="meta">SFTP · File validation · Reconciliation</p>
             </div>
-            <!-- Replace # with a Loom/video/PDF link if you want -->
-            <a class="link" href="#" target="_blank" rel="noreferrer">View ↗</a>
           </div>
           <p class="meta" style="margin-top:8px">
             Built and maintained payroll-related data feeds with controls that keep transfers consistent, traceable,
@@ -345,17 +343,15 @@
         <article class="card proj">
           <div class="top">
             <div>
-              <h3>Power BI Payroll Dashboards</h3>
+              <h3>Power BI HR & Payroll Dashboards</h3>
               <p class="meta">Power BI · Modeling · KPI definitions</p>
             </div>
-            <a class="link" href="#" target="_blank" rel="noreferrer">View ↗</a>
           </div>
           <p class="meta" style="margin-top:8px">
-            Delivered payroll reporting that leadership can trust — consistent measures, clear definitions,
-            and refresh-ready datasets.
+            Delivered reporting that leaders can trust—consistent measures, clear definitions, and refresh-ready datasets.
           </p>
           <ul class="list">
-            <li>Designed clean data models aligned to payroll structures and reporting cycles.</li>
+            <li>Designed clean data models aligned to HR/payroll structures and cycles.</li>
             <li>Built operational views for trends, variances, and exceptions.</li>
           </ul>
           <div class="tags">
@@ -369,46 +365,90 @@
               <h3>Automation Toolkit</h3>
               <p class="meta">Power Query · VBA · PowerShell</p>
             </div>
-            <a class="link" href="#" target="_blank" rel="noreferrer">View ↗</a>
           </div>
           <p class="meta" style="margin-top:8px">
-            Automated recurring payroll data prep and reporting steps with reusable templates and scripts.
+            Automated recurring data prep and reporting steps with reusable templates and scripts.
           </p>
           <ul class="list">
-            <li>Reduced manual effort with standardized imports, transformations, and validations.</li>
-            <li>Improved repeatability by turning “one-off” processes into documented workflows.</li>
+            <li>Reduced manual work with standardized imports, transformations, and validations.</li>
+            <li>Improved repeatability by turning “one-off” tasks into documented workflows.</li>
           </ul>
           <div class="tags">
             <span class="tag">Automation</span><span class="tag">Templates</span><span class="tag">Efficiency</span>
           </div>
         </article>
-      </div>
 
-      <div class="card" style="margin-top:16px">
-        <div class="section-title">
-          <h2 style="margin:0;font-size:16px">Want this to feel more “portfolio”?</h2>
-          <span>Easy upgrade</span>
-        </div>
-        <p class="meta">
-          Replace each “View ↗” link with a Loom demo, a 1-page PDF screenshot deck, or a sanitized sample report.
-          If you paste 3–6 links (or screenshots), I’ll rewrite each card into a crisp “problem → approach → impact”
-          format and wire everything up.
-        </p>
+        <article class="card proj">
+          <div class="top">
+            <div>
+              <h3>HR Knowledge Assistant</h3>
+              <p class="meta">Prompt design · Guardrails · Retrieval patterns</p>
+            </div>
+          </div>
+          <p class="meta" style="margin-top:8px">
+            Prototyped an HR assistant to improve how teams find policy/process answers while keeping governance in mind.
+          </p>
+          <ul class="list">
+            <li>Designed prompt patterns and safe-answer boundaries for HR workflows.</li>
+            <li>Explored retrieval approaches to reduce “hallucinated” answers.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">GenAI</span><span class="tag">Enablement</span><span class="tag">Governance</span>
+          </div>
+        </article>
+
+        <article class="card proj">
+          <div class="top">
+            <div>
+              <h3>Workforce Insights Prototype</h3>
+              <p class="meta">Analytics · Segmentation · Forecasting concepts</p>
+            </div>
+          </div>
+          <p class="meta" style="margin-top:8px">
+            Built a prototype to explore workforce and HR operational signals (trend views and forward-looking scenarios).
+          </p>
+          <ul class="list">
+            <li>Structured metrics and definitions that leaders can interpret quickly.</li>
+            <li>Tested “what-if” style reporting for planning conversations.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">People Analytics</span><span class="tag">Scenarios</span><span class="tag">Ops</span>
+          </div>
+        </article>
+
+        <article class="card proj">
+          <div class="top">
+            <div>
+              <h3>Data Processing Scripts</h3>
+              <p class="meta">PowerShell · VBA · Repeatable pipelines</p>
+            </div>
+          </div>
+          <p class="meta" style="margin-top:8px">
+            Created lightweight scripts for data standardization, validation, and exception handling across HR datasets.
+          </p>
+          <ul class="list">
+            <li>Automated repetitive file prep steps for consistent outputs.</li>
+            <li>Improved auditability by making transformations traceable.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Scripting</span><span class="tag">Data Quality</span><span class="tag">Controls</span>
+          </div>
+        </article>
       </div>
     </section>
 
     <!-- EXPERIENCE -->
     <section id="experience" class="section">
       <div class="section-title">
-        <h2>Experience</h2><span>Short + clean (expand anytime)</span>
+        <h2>Experience</h2><span>Focus areas</span>
       </div>
 
       <div class="grid cols-2">
         <article class="card">
-          <h3 style="margin:0 0 8px; font-size:16px">Payroll Operations / HR Operations</h3>
+          <h3 style="margin:0 0 8px; font-size:16px">HR & Payroll Operations</h3>
           <p class="meta">ADP · Ceridian · SAP SuccessFactors · SFTP feeds</p>
           <ul class="list">
-            <li>Owned payroll workflows and operational readiness across platforms and cycles.</li>
+            <li>Owned operational readiness across platforms and cycles.</li>
             <li>Managed data transfers and controls supporting downstream reporting and audits.</li>
             <li>Improved data quality with repeatable validation and reconciliation routines.</li>
           </ul>
@@ -418,15 +458,15 @@
         </article>
 
         <article class="card">
-          <h3 style="margin:0 0 8px; font-size:16px">Analytics & Automation</h3>
-          <p class="meta">Power BI · Power Query · VBA · PowerShell</p>
+          <h3 style="margin:0 0 8px; font-size:16px">Digital Solutions</h3>
+          <p class="meta">Power BI · Power Query · VBA · PowerShell · GenAI prototypes</p>
           <ul class="list">
-            <li>Built dashboards and operational KPIs for payroll datasets.</li>
-            <li>Automated recurring prep/refresh steps with Power Query and reusable templates.</li>
-            <li>Created scripts for transformation, standardization, and exception handling.</li>
+            <li>Built dashboards and KPIs for HR/payroll datasets.</li>
+            <li>Automated recurring prep/refresh steps with reusable templates and scripts.</li>
+            <li>Explored practical AI/ML patterns to reduce admin and improve self-serve support.</li>
           </ul>
           <div class="tags">
-            <span class="tag">Power BI</span><span class="tag">Automation</span><span class="tag">Data Quality</span>
+            <span class="tag">Dashboards</span><span class="tag">Automation</span><span class="tag">AI Enablement</span>
           </div>
         </article>
       </div>
@@ -440,6 +480,7 @@
 
       <div class="card">
         <div class="tags">
+          <span class="tag">HR Operations</span>
           <span class="tag">Payroll Operations</span>
           <span class="tag">ADP</span>
           <span class="tag">Ceridian</span>
@@ -453,6 +494,8 @@
           <span class="tag">VBA</span>
           <span class="tag">PowerShell</span>
           <span class="tag">Process Improvement</span>
+          <span class="tag">GenAI Prototyping</span>
+          <span class="tag">People Analytics</span>
         </div>
       </div>
     </section>
@@ -499,9 +542,11 @@
     function setTheme(theme) {
       root.setAttribute("data-theme", theme);
       localStorage.setItem("theme", theme);
+
       const isDark = theme === "dark";
       icon.textContent = isDark ? "☀" : "☾";
       label.textContent = isDark ? "Light" : "Dark";
+      // text colors are handled via CSS tokens (color: var(--text))
     }
 
     const saved = localStorage.getItem("theme");
