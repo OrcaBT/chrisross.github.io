@@ -1,1 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Portfolio</title>
+  <meta name="description" content="Personal portfolio site." />
+
+  <style>
+    :root{
+      --bg:#0b0d10; --card:#12151b; --text:#e9eef5; --muted:#a9b4c3;
+      --line:#242b36; --accent:#7dd3fc; --accent2:#a78bfa;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1080px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 20% -10%, rgba(125,211,252,.20), transparent 60%),
+        radial-gradient(900px 500px at 90% 0%, rgba(167,139,250,.18), transparent 55%),
+        radial-gradient(700px 400px at 50% 110%, rgba(125,211,252,.10), transparent 55%),
+        var(--bg);
+    }
+    a{color:inherit; text-decoration:none}
+    a:hover{opacity:.9}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 60px}
+    .nav{
+      position:sticky; top:0; z-index:5;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(11,13,16,.78), rgba(11,13,16,.35));
+      border-bottom:1px solid rgba(36,43,54,.55);
+    }
+    .nav-inner{max-width:var(--max); margin:0 auto; padding:12px 18px; display:flex; align-items:center; justify-content:space-between; gap:14px}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:650; letter-spacing:.2px}
+    .dot{width:10px; height:10px; border-radius:50%; background:linear-gradient(135deg,var(--accent),var(--accent2))}
+    .links{display:flex; gap:14px; flex-wrap:wrap; font-size:14px; color:var(--muted)}
+    .links a{padding:8px 10px; border-radius:12px}
+    .links a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+    .hero{padding:42px 0 18px}
+    .pill{
+      display:inline-flex; gap:8px; align-items:center;
+      border:1px solid rgba(36,43,54,.8);
+      background:rgba(18,21,27,.7);
+      padding:8px 12px; border-radius:999px; color:var(--muted); font-size:13px;
+    }
+    h1{margin:16px 0 10px; font-size:42px; line-height:1.1; letter-spacing:-.6px}
+    .sub{max-width:70ch; color:var(--muted); font-size:16px; margin:0 0 18px}
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:11px 14px; border-radius:14px;
+      border:1px solid rgba(36,43,54,.9);
+      background:rgba(18,21,27,.8);
+      box-shadow: var(--shadow);
+      font-weight:600; font-size:14px;
+    }
+    .btn.primary{
+      border:none;
+      background: linear-gradient(135deg, rgba(125,211,252,.95), rgba(167,139,250,.95));
+      color:#0b0d10;
+    }
+    .grid{display:grid; gap:14px}
+    @media (min-width: 900px){
+      .grid.cols-2{grid-template-columns: 1.2fr .8fr}
+      .grid.cols-3{grid-template-columns: repeat(3, 1fr)}
+    }
+    .card{
+      background:rgba(18,21,27,.75);
+      border:1px solid rgba(36,43,54,.75);
+      border-radius:var(--radius);
+      padding:16px;
+      box-shadow: var(--shadow);
+    }
+    .card h2{margin:0 0 10px; font-size:18px}
+    .meta{color:var(--muted); font-size:14px; margin:0}
+    .section{padding:18px 0}
+    .section-title{display:flex; align-items:baseline; justify-content:space-between; gap:10px; margin-bottom:10px}
+    .section-title h2{margin:0; font-size:18px}
+    .section-title span{color:var(--muted); font-size:13px}
+    .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .tag{
+      font-size:12px; color:var(--muted);
+      border:1px solid rgba(36,43,54,.9);
+      padding:6px 10px; border-radius:999px;
+      background:rgba(255,255,255,.03);
+    }
+    .proj{display:flex; flex-direction:column; gap:10px}
+    .proj .top{display:flex; align-items:flex-start; justify-content:space-between; gap:10px}
+    .proj a.link{color:var(--accent); font-weight:600; font-size:13px}
+    .list{margin:10px 0 0; padding-left:18px; color:var(--muted); font-size:14px}
+    .list li{margin:6px 0}
+    footer{padding-top:28px; color:var(--muted); font-size:13px; border-top:1px solid rgba(36,43,54,.65); margin-top:26px}
+    .kbd{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand"><span class="dot"></span><span>Your Name</span></div>
+      <div class="links">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="pill">Available for: <strong>Full-time</strong> · Toronto</div>
+      <h1>HR & Analytics Leader building practical tools with AI.</h1>
+      <p class="sub">
+        I work at the intersection of people strategy, data, and automation—turning messy workflows into simple dashboards,
+        decision support, and scalable processes.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">See projects</a>
+        <a class="btn" href="#contact">Contact</a>
+        <a class="btn" href="#" target="_blank" rel="noreferrer">Resume (PDF)</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="section-title">
+            <h2>Highlights</h2><span>What I’m known for</span>
+          </div>
+          <ul class="list">
+            <li>Building lightweight internal apps (dashboards, trackers, analytics) that teams actually adopt.</li>
+            <li>HR strategy + governance + measurement: translating business needs into clear operating models.</li>
+            <li>Automating reporting and reducing manual work with practical AI tooling.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="section-title">
+            <h2>Quick links</h2><span>Find me online</span>
+          </div>
+          <div class="tags">
+            <a class="tag" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="tag" href="#" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="tag" href="mailto:you@email.com">Email</a>
+            <a class="tag" href="#" target="_blank" rel="noreferrer">Calendar</a>
+          </div>
+          <p class="meta" style="margin-top:12px">
+            Tip: update the links above and the “Resume (PDF)” button.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-title">
+        <h2>Projects</h2><span>3–6 strongest is plenty</span>
+      </div>
+
+      <div class="grid cols-3">
+        <article class="card proj">
+          <div class="top">
+            <div>
+              <h2>Policy Tracker Dashboard</h2>
+              <p class="meta">PyQt6 · SQLAlchemy · SQLite</p>
+            </div>
+            <a class="link" href="#" target="_blank" rel="noreferrer">Demo ↗</a>
+          </div>
+          <p class="meta">Internal tool to manage policy lifecycle, owners, reviews, and reporting.</p>
+          <ul class="list">
+            <li>Reduced manual tracking and improved audit readiness.</li>
+            <li>Export workflows + validations + structured reporting.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Desktop App</span><span class="tag">Data Model</span><span class="tag">Automation</span>
+          </div>
+        </article>
+
+        <article class="card proj">
+          <div class="top">
+            <div>
+              <h2>Recruitment Dashboard</h2>
+              <p class="meta">Python · Analytics · Templates</p>
+            </div>
+            <a class="link" href="#" target="_blank" rel="noreferrer">Write-up ↗</a>
+          </div>
+          <p class="meta">Vacancies + closed roles tracking with validations and time-to-hire metrics.</p>
+          <ul class="list">
+            <li>Standardized data capture for recruiters.</li>
+            <li>Auto-calculated KPIs for leadership reporting.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">KPIs</span><span class="tag">Workflow</span><span class="tag">Ops</span>
+          </div>
+        </article>
+
+        <article class="card proj">
+          <div class="top">
+            <div>
+              <h2>AI HR Applets</h2>
+              <p class="meta">LLM workflows · Governance</p>
+            </div>
+            <a class="link" href="#" target="_blank" rel="noreferrer">Notes ↗</a>
+          </div>
+          <p class="meta">Mini-app concepts to reduce HR admin and improve employee services.</p>
+          <ul class="list">
+            <li>Built prompts + guardrails for responsible usage.</li>
+            <li>Focused on measurable cycle-time reduction.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">GenAI</span><span class="tag">Enablement</span><span class="tag">Compliance</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="section-title">
+        <h2>Skills</h2><span>Keep it tight</span>
+      </div>
+      <div class="card">
+        <div class="tags">
+          <span class="tag">HR Strategy</span>
+          <span class="tag">Org Design</span>
+          <span class="tag">Workforce Analytics</span>
+          <span class="tag">Total Rewards</span>
+          <span class="tag">Governance</span>
+          <span class="tag">Python</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Dashboards</span>
+          <span class="tag">Automation</span>
+          <span class="tag">GenAI Enablement</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-title">
+        <h2>About</h2><span>Short and human</span>
+      </div>
+      <div class="card">
+        <p class="meta">
+          I’m an HR Planning & Steering leader who likes building practical tools. I focus on
+          decision-impact, clean data, and workflows people will actually use. When I’m not working,
+          I’m training (natural bodybuilding) and building side projects.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="section-title">
+        <h2>Contact</h2><span>Make it easy</span>
+      </div>
+      <div class="card">
+        <p class="meta">Email is best. I usually respond within 24–48 hours.</p>
+        <div class="cta" style="margin-top:10px">
+          <a class="btn primary" href="mailto:you@email.com">Email me</a>
+          <a class="btn" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="#" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+        <p class="meta" style="margin-top:12px">
+          Optional: add a contact form later via Formspree / Getform (still free tier).
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> Your Name · Built with <span class="kbd">index.html</span> on GitHub Pages</div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
 
