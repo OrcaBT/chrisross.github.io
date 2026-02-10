@@ -3,11 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chris Ross — HR Digital Ops, Analytics & Automation</title>
-  <meta name="description" content="Chris Ross — HR digital + operations solutions: payroll platforms, data flows, dashboards, automation, and AI/ML prototypes." />
+  <title>Chris Ross — Strategic HRBP | Digital HR & Ops</title>
+  <meta name="description" content="Chris Ross — Strategic HR Business Partner blending workforce strategy, total rewards, HR operations, analytics, and automation (ADP, Ceridian, SuccessFactors, Power BI, Power Query, VBA, PowerShell)." />
 
   <style>
-    /* ============ THEME TOKENS ============ */
     :root{
       --bg:#ffffff;
       --text:#0b0d10;
@@ -20,7 +19,6 @@
       --max: 1120px;
       --accent:#0a84ff;
       --accent2:#7c3aed;
-
       --glass: rgba(255,255,255,.75);
       --glass2: rgba(255,255,255,.92);
       --glow: rgba(10,132,255,.14);
@@ -34,13 +32,11 @@
       --card:#12151b;
       --shadow: 0 12px 45px rgba(0,0,0,.40);
       --shadow2: 0 20px 70px rgba(0,0,0,.55);
-
       --glass: rgba(11,13,16,.65);
       --glass2: rgba(18,21,27,.85);
       --glow: rgba(10,132,255,.18);
     }
 
-    /* ============ BASE ============ */
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
@@ -58,7 +54,7 @@
 
     .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px}
 
-    /* ============ NAV (STICKY + CTA) ============ */
+    /* NAV */
     .nav{
       position:sticky; top:0; z-index:10;
       backdrop-filter: blur(10px);
@@ -69,10 +65,7 @@
       max-width:var(--max); margin:0 auto; padding:12px 18px;
       display:flex; align-items:center; justify-content:space-between; gap:12px;
     }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight:700; letter-spacing:.2px;
-    }
+    .brand{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px}
     .dot{
       width:10px; height:10px; border-radius:50%;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
@@ -86,10 +79,9 @@
     .nav-links a{padding:8px 10px; border-radius:12px}
     .nav-links a:hover{background:rgba(0,0,0,.05); color:var(--text)}
     [data-theme="dark"] .nav-links a:hover{background:rgba(255,255,255,.06)}
-
     .nav-cta{display:flex; gap:8px; flex-wrap:wrap; align-items:center}
 
-    /* ============ BUTTONS ============ */
+    /* BUTTONS */
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding:10px 12px; border-radius:14px;
@@ -99,7 +91,7 @@
       font-weight:650; font-size:13px;
       transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
       white-space:nowrap;
-      color: var(--text); /* important: button text follows theme */
+      color: var(--text);
     }
     .btn:hover{transform: translateY(-1px); box-shadow: var(--shadow2)}
     .btn.primary{
@@ -108,7 +100,7 @@
       color:#fff;
     }
 
-    /* ============ LAYOUT ============ */
+    /* LAYOUT */
     .grid{display:grid; gap:16px}
     @media (min-width: 940px){
       .grid.hero-grid{grid-template-columns: 1.35fr .65fr; align-items:start}
@@ -116,7 +108,7 @@
       .grid.cols-3{grid-template-columns: repeat(3, 1fr)}
     }
 
-    /* ============ HERO ============ */
+    /* HERO */
     .hero{padding:42px 0 18px}
     .pill{
       display:inline-flex; gap:8px; align-items:center;
@@ -126,9 +118,9 @@
       color:var(--muted); font-size:13px;
     }
     h1{margin:14px 0 10px; font-size:46px; line-height:1.06; letter-spacing:-.9px}
-    .sub{max-width:80ch; color:var(--muted); font-size:16px; margin:0 0 18px}
+    .sub{max-width:82ch; color:var(--muted); font-size:16px; margin:0 0 18px}
 
-    /* ============ CARDS ============ */
+    /* CARDS */
     .card{
       background: var(--card);
       border:1px solid var(--line);
@@ -151,11 +143,8 @@
     }
     [data-theme="dark"] .tag{background: rgba(255,255,255,.04)}
 
-    /* ============ AVATAR ============ */
-    .avatar-wrap{
-      display:flex; flex-direction:column; gap:12px; align-items:center;
-      padding:18px;
-    }
+    /* AVATAR */
+    .avatar-wrap{display:flex; flex-direction:column; gap:12px; align-items:center; padding:18px}
     .avatar{
       width:170px; height:170px; border-radius:50%;
       object-fit:cover;
@@ -166,7 +155,7 @@
     .mini{display:flex; flex-direction:column; gap:6px; width:100%}
     .mini strong{font-size:16px}
 
-    /* ============ PROJECT CARDS ============ */
+    /* PROJECT CARDS */
     .proj{
       position:relative;
       overflow:hidden;
@@ -190,11 +179,9 @@
     .list{margin:10px 0 0; padding-left:18px; color:var(--muted); font-size:14px}
     .list li{margin:6px 0}
 
-    /* ============ METRICS STRIP ============ */
+    /* METRICS */
     .metrics{display:grid; gap:12px}
-    @media (min-width: 940px){
-      .metrics{grid-template-columns: repeat(3, 1fr)}
-    }
+    @media (min-width: 940px){ .metrics{grid-template-columns: repeat(3, 1fr)} }
     .metric{
       padding:14px 16px;
       border-radius: var(--radius);
@@ -205,7 +192,7 @@
     .metric strong{display:block; font-size:18px; letter-spacing:-.2px}
     .metric span{color:var(--muted); font-size:13px}
 
-    /* ============ THEME TOGGLE ============ */
+    /* TOGGLE */
     .toggle{
       display:inline-flex; align-items:center; gap:8px;
       padding:9px 10px;
@@ -217,7 +204,7 @@
       user-select:none;
       font-weight:650;
       font-size:13px;
-      color: var(--text); /* important: follows theme */
+      color: var(--text);
     }
     .toggle:active{transform: translateY(1px)}
     .kbd{
@@ -242,13 +229,13 @@
 </head>
 
 <body>
-  <!-- NAV -->
   <div class="nav">
     <div class="nav-inner">
       <div class="brand"><span class="dot"></span><span>Chris Ross</span></div>
 
       <div class="nav-links">
-        <a href="#projects">Projects</a>
+        <a href="#hrbp">HRBP</a>
+        <a href="#digital">Digital</a>
         <a href="#experience">Experience</a>
         <a href="#capabilities">Capabilities</a>
         <a href="#contact">Contact</a>
@@ -267,29 +254,28 @@
   </div>
 
   <main class="wrap">
-    <!-- HERO -->
     <section class="hero">
       <div class="grid hero-grid">
         <div>
-          <div class="pill">Toronto, ON · HR Digital & Operations Solutions</div>
-          <h1>HR operations, improved with data, automation, and practical AI.</h1>
+          <div class="pill">Toronto, ON · Strategic HR Business Partner · Digital HR</div>
+          <h1>Strategic HRBP with a builder mindset.</h1>
           <p class="sub">
-            I build reliable HR operations solutions—owning payroll platforms and data flows (ADP, Ceridian,
-            SAP SuccessFactors + SFTP), turning HR and payroll data into clear Power BI dashboards, and automating
-            recurring work with Power Query, VBA, and PowerShell. I also build lightweight AI/ML prototypes to
-            improve how teams find answers and make decisions.
+            I partner with senior leaders to drive workforce strategy, organizational effectiveness, and transformation—
+            then back it up with scalable HR operations and digital solutions. My work spans total rewards governance,
+            people analytics and dashboards, and automation across HR/payroll data flows (ADP, Ceridian, SAP SuccessFactors + SFTP),
+            with practical AI/ML prototypes where it adds value.
           </p>
 
           <div class="metrics" style="margin-top:16px">
-            <div class="metric"><strong>HR Ops Platforms</strong><span>ADP · Ceridian · SAP SuccessFactors</span></div>
-            <div class="metric"><strong>Data Reliability</strong><span>SFTP feeds · controls · reconciliation</span></div>
-            <div class="metric"><strong>Analytics + Automation</strong><span>Power BI · Power Query · VBA · PowerShell</span></div>
+            <div class="metric"><strong>HRBP & Strategy</strong><span>Org effectiveness · change · talent</span></div>
+            <div class="metric"><strong>Total Rewards</strong><span>Merit · bonus · pension governance</span></div>
+            <div class="metric"><strong>Digital Ops</strong><span>Power BI · automation · HR/payroll platforms</span></div>
           </div>
 
           <div class="nav-cta" style="margin-top:16px">
-            <a class="btn primary" href="#projects">See projects</a>
+            <a class="btn primary" href="#hrbp">HRBP highlights</a>
+            <a class="btn" href="#digital">Digital projects</a>
             <a class="btn" href="assets/Chris-Ross-Resume.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a>
-            <a class="btn" href="https://www.linkedin.com/in/chris-ross-942a5017/" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
 
           <p class="meta" style="margin-top:12px">
@@ -300,23 +286,92 @@
         <aside class="card avatar-wrap">
           <img class="avatar" src="assets/chris-ross.png" alt="Chris Ross headshot" />
           <div class="mini">
-            <strong>Chris Ross</strong>
-            <div class="meta">HR Digital Ops · Analytics · Automation</div>
-            <div class="meta">Payroll systems · Data flows · Dashboards</div>
+            <strong>Chris Ross, MBA, CHRL</strong>
+            <div class="meta">Manager, HR Planning & Steering (BMW Group)</div>
+            <div class="meta">HRBP · Rewards · Analytics · Digital HR</div>
           </div>
           <div class="tags" style="justify-content:center">
-            <span class="tag">Reliability</span>
-            <span class="tag">Controls</span>
+            <span class="tag">Executive Partner</span>
+            <span class="tag">Regulated Environments</span>
             <span class="tag">Builder Mindset</span>
           </div>
         </aside>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section">
+    <!-- HRBP -->
+    <section id="hrbp" class="section">
       <div class="section-title">
-        <h2>Projects</h2><span>Operations + digital builds</span>
+        <h2>HR Business Partnering</h2><span>How I drive outcomes</span>
+      </div>
+
+      <div class="grid cols-3">
+        <article class="card proj">
+          <div class="top">
+            <div>
+              <h3>Workforce Strategy & Org Effectiveness</h3>
+              <p class="meta">Operating models · org design · planning</p>
+            </div>
+          </div>
+          <p class="meta" style="margin-top:8px">
+            Partner with leaders to align structure, talent, and priorities to business strategy—turning “where we’re going”
+            into a clear org and workforce plan.
+          </p>
+          <ul class="list">
+            <li>Set OKRs and workforce priorities aligned to divisional objectives.</li>
+            <li>Use analytics to inform headcount and retention decisions.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Business Partnering</span><span class="tag">Org Development</span><span class="tag">Analytics</span>
+          </div>
+        </article>
+
+        <article class="card proj">
+          <div class="top">
+            <div>
+              <h3>Transformation & Change</h3>
+              <p class="meta">Mergers · redesign · execution</p>
+            </div>
+          </div>
+          <p class="meta" style="margin-top:8px">
+            Lead complex transformations by clarifying the future state, aligning stakeholders, and translating change into
+            practical steps teams can execute.
+          </p>
+          <ul class="list">
+            <li>Redesign operating models and align talent to future-state needs.</li>
+            <li>Strengthen governance and operational readiness across entities.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Change</span><span class="tag">Operating Model</span><span class="tag">Governance</span>
+          </div>
+        </article>
+
+        <article class="card proj">
+          <div class="top">
+            <div>
+              <h3>Total Rewards Leadership</h3>
+              <p class="meta">Comp · benefits · pay equity</p>
+            </div>
+          </div>
+          <p class="meta" style="margin-top:8px">
+            Direct compensation and benefits programs with strong governance—supporting competitiveness, equity,
+            and performance alignment.
+          </p>
+          <ul class="list">
+            <li>Manage merit, bonus, and pension governance across multi-entity populations.</li>
+            <li>Drive clarity with consistent frameworks and decision-ready reporting.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Rewards</span><span class="tag">Equity</span><span class="tag">Leadership</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- DIGITAL -->
+    <section id="digital" class="section">
+      <div class="section-title">
+        <h2>Digital & Operations Projects</h2><span>Systems, data, and automation</span>
       </div>
 
       <div class="grid cols-3">
@@ -324,16 +379,15 @@
           <div class="top">
             <div>
               <h3>Payroll Data Flows</h3>
-              <p class="meta">SFTP · File validation · Reconciliation</p>
+              <p class="meta">ADP · Ceridian · SuccessFactors · SFTP</p>
             </div>
           </div>
           <p class="meta" style="margin-top:8px">
-            Built and maintained payroll-related data feeds with controls that keep transfers consistent, traceable,
-            and audit-ready.
+            Built and maintained HR/payroll data feeds with controls that keep transfers consistent, traceable, and reliable.
           </p>
           <ul class="list">
-            <li>Implemented checks for missing files, schema drift, and out-of-range values.</li>
-            <li>Standardized reconciliation steps to speed up issue triage.</li>
+            <li>Validation checks for missing files, schema drift, and out-of-range values.</li>
+            <li>Standardized reconciliation steps to speed issue triage.</li>
           </ul>
           <div class="tags">
             <span class="tag">Payroll Ops</span><span class="tag">Data Quality</span><span class="tag">Controls</span>
@@ -343,19 +397,19 @@
         <article class="card proj">
           <div class="top">
             <div>
-              <h3>Power BI HR & Payroll Dashboards</h3>
-              <p class="meta">Power BI · Modeling · KPI definitions</p>
+              <h3>Power BI Dashboards</h3>
+              <p class="meta">HR & payroll insights · KPI definitions</p>
             </div>
           </div>
           <p class="meta" style="margin-top:8px">
-            Delivered reporting that leaders can trust—consistent measures, clear definitions, and refresh-ready datasets.
+            Built dashboards leaders can trust—clean models, consistent measures, and refresh-ready datasets.
           </p>
           <ul class="list">
-            <li>Designed clean data models aligned to HR/payroll structures and cycles.</li>
-            <li>Built operational views for trends, variances, and exceptions.</li>
+            <li>Operational views for trends, variances, and exceptions.</li>
+            <li>Standardized definitions to reduce “multiple versions of the truth.”</li>
           </ul>
           <div class="tags">
-            <span class="tag">Dashboards</span><span class="tag">KPIs</span><span class="tag">Decision Support</span>
+            <span class="tag">Dashboards</span><span class="tag">Decision Support</span><span class="tag">KPIs</span>
           </div>
         </article>
 
@@ -370,30 +424,30 @@
             Automated recurring data prep and reporting steps with reusable templates and scripts.
           </p>
           <ul class="list">
-            <li>Reduced manual work with standardized imports, transformations, and validations.</li>
-            <li>Improved repeatability by turning “one-off” tasks into documented workflows.</li>
+            <li>Standardized imports, transformations, and validations.</li>
+            <li>Improved repeatability by turning “one-off” tasks into workflows.</li>
           </ul>
           <div class="tags">
-            <span class="tag">Automation</span><span class="tag">Templates</span><span class="tag">Efficiency</span>
+            <span class="tag">Automation</span><span class="tag">Efficiency</span><span class="tag">Templates</span>
           </div>
         </article>
 
         <article class="card proj">
           <div class="top">
             <div>
-              <h3>HR Knowledge Assistant</h3>
-              <p class="meta">Prompt design · Guardrails · Retrieval patterns</p>
+              <h3>Responsible AI Enablement</h3>
+              <p class="meta">HR workflows · governance-first</p>
             </div>
           </div>
           <p class="meta" style="margin-top:8px">
-            Prototyped an HR assistant to improve how teams find policy/process answers while keeping governance in mind.
+            Integrated responsible AI and automation into HR workflows to improve planning, analytics, and operational efficiency.
           </p>
           <ul class="list">
-            <li>Designed prompt patterns and safe-answer boundaries for HR workflows.</li>
-            <li>Explored retrieval approaches to reduce “hallucinated” answers.</li>
+            <li>Guardrails for ethical use, data integrity, and governance alignment.</li>
+            <li>Practical use-cases focused on measurable cycle-time reduction.</li>
           </ul>
           <div class="tags">
-            <span class="tag">GenAI</span><span class="tag">Enablement</span><span class="tag">Governance</span>
+            <span class="tag">GenAI</span><span class="tag">Governance</span><span class="tag">Enablement</span>
           </div>
         </article>
 
@@ -401,18 +455,18 @@
           <div class="top">
             <div>
               <h3>Workforce Insights Prototype</h3>
-              <p class="meta">Analytics · Segmentation · Forecasting concepts</p>
+              <p class="meta">Analytics · scenarios · simulations</p>
             </div>
           </div>
           <p class="meta" style="margin-top:8px">
-            Built a prototype to explore workforce and HR operational signals (trend views and forward-looking scenarios).
+            Built early-stage scenario views to support leadership decisions on headcount and retention.
           </p>
           <ul class="list">
-            <li>Structured metrics and definitions that leaders can interpret quickly.</li>
-            <li>Tested “what-if” style reporting for planning conversations.</li>
+            <li>Clear metrics and definitions leaders can interpret quickly.</li>
+            <li>“What-if” style reporting for planning conversations.</li>
           </ul>
           <div class="tags">
-            <span class="tag">People Analytics</span><span class="tag">Scenarios</span><span class="tag">Ops</span>
+            <span class="tag">People Analytics</span><span class="tag">Scenarios</span><span class="tag">Planning</span>
           </div>
         </article>
 
@@ -420,18 +474,18 @@
           <div class="top">
             <div>
               <h3>Data Processing Scripts</h3>
-              <p class="meta">PowerShell · VBA · Repeatable pipelines</p>
+              <p class="meta">PowerShell · VBA · standardization</p>
             </div>
           </div>
           <p class="meta" style="margin-top:8px">
-            Created lightweight scripts for data standardization, validation, and exception handling across HR datasets.
+            Lightweight scripts for transformation, standardization, and exception handling across HR datasets.
           </p>
           <ul class="list">
-            <li>Automated repetitive file prep steps for consistent outputs.</li>
-            <li>Improved auditability by making transformations traceable.</li>
+            <li>Automated file prep steps for consistent outputs.</li>
+            <li>Improved traceability and auditability of transformations.</li>
           </ul>
           <div class="tags">
-            <span class="tag">Scripting</span><span class="tag">Data Quality</span><span class="tag">Controls</span>
+            <span class="tag">Scripting</span><span class="tag">Data Quality</span><span class="tag">Ops</span>
           </div>
         </article>
       </div>
@@ -440,33 +494,62 @@
     <!-- EXPERIENCE -->
     <section id="experience" class="section">
       <div class="section-title">
-        <h2>Experience</h2><span>Focus areas</span>
+        <h2>Experience</h2><span>Selected roles</span>
       </div>
 
       <div class="grid cols-2">
         <article class="card">
-          <h3 style="margin:0 0 8px; font-size:16px">HR & Payroll Operations</h3>
-          <p class="meta">ADP · Ceridian · SAP SuccessFactors · SFTP feeds</p>
+          <h3 style="margin:0 0 8px; font-size:16px">BMW Group — Toronto, Canada</h3>
+          <p class="meta">Manager, HR Planning & Steering · Nov 2024 – Current</p>
           <ul class="list">
-            <li>Owned operational readiness across platforms and cycles.</li>
-            <li>Managed data transfers and controls supporting downstream reporting and audits.</li>
-            <li>Improved data quality with repeatable validation and reconciliation routines.</li>
+            <li>Lead HR planning, analytics, and people operations; set OKRs aligned to divisional objectives.</li>
+            <li>Direct compensation and benefits strategy across multiple entities (~300 employees).</li>
+            <li>Deliver executive workforce insights and predictive simulations for headcount/retention decisions.</li>
+            <li>Integrate responsible AI and automation into HR workflows.</li>
           </ul>
           <div class="tags">
-            <span class="tag">Operations</span><span class="tag">Controls</span><span class="tag">Audit-readiness</span>
+            <span class="tag">HRBP</span><span class="tag">Analytics</span><span class="tag">Rewards</span><span class="tag">Governance</span>
           </div>
         </article>
 
         <article class="card">
-          <h3 style="margin:0 0 8px; font-size:16px">Digital Solutions</h3>
-          <p class="meta">Power BI · Power Query · VBA · PowerShell · GenAI prototypes</p>
+          <h3 style="margin:0 0 8px; font-size:16px">BMW Group — Toronto, Canada</h3>
+          <p class="meta">Manager, Human Resources Business Leader · 2020 – Nov 2024</p>
           <ul class="list">
-            <li>Built dashboards and KPIs for HR/payroll datasets.</li>
-            <li>Automated recurring prep/refresh steps with reusable templates and scripts.</li>
-            <li>Explored practical AI/ML patterns to reduce admin and improve self-serve support.</li>
+            <li>Trusted HR advisor to Sales and Finance leaders; aligned people strategy with performance and resilience.</li>
+            <li>Partnered with executives to improve leadership effectiveness and sustain engagement/retention gains.</li>
+            <li>Directed compensation, benefits, and pension administration for a 300-person client group.</li>
           </ul>
           <div class="tags">
-            <span class="tag">Dashboards</span><span class="tag">Automation</span><span class="tag">AI Enablement</span>
+            <span class="tag">Business Partnering</span><span class="tag">Leadership</span><span class="tag">Rewards</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="grid cols-2" style="margin-top:16px">
+        <article class="card">
+          <h3 style="margin:0 0 8px; font-size:16px">Mitsubishi UFJ Financial Group — Toronto, Canada</h3>
+          <p class="meta">AVP, Regional HR Business Partner · 2018 – 2020</p>
+          <ul class="list">
+            <li>Advised leaders across Corporate Banking, Securities, and Risk on workforce strategy and change.</li>
+            <li>Directed annual compensation cycles (merit, bonus, equity) across regulated entities.</li>
+            <li>Strengthened compliance and operational readiness in partnership with regulators.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Regulated FS</span><span class="tag">Change</span><span class="tag">Comp Cycles</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 style="margin:0 0 8px; font-size:16px">MUFG / AEGON — Earlier roles</h3>
+          <p class="meta">HR Manager (2012–2018) · Employee Experience & Brand Lead (2009–2010)</p>
+          <ul class="list">
+            <li>Oversaw HR operations during major entity conversion; aligned policies and structures to global standards.</li>
+            <li>Implemented HR systems (Workday, Ceridian, LMS) for global integration and adoption.</li>
+            <li>Led employee experience and employer brand initiatives to support retention and engagement.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">HR Ops</span><span class="tag">HRIS</span><span class="tag">Employee Experience</span>
           </div>
         </article>
       </div>
@@ -480,22 +563,28 @@
 
       <div class="card">
         <div class="tags">
-          <span class="tag">HR Operations</span>
-          <span class="tag">Payroll Operations</span>
-          <span class="tag">ADP</span>
-          <span class="tag">Ceridian</span>
-          <span class="tag">SAP SuccessFactors</span>
-          <span class="tag">SFTP Data Flows</span>
-          <span class="tag">Data Validation</span>
-          <span class="tag">Reconciliation</span>
-          <span class="tag">Reporting & Controls</span>
+          <span class="tag">Strategic HR Leadership</span>
+          <span class="tag">Business Partnering</span>
+          <span class="tag">Org Development</span>
+          <span class="tag">Change Management</span>
+          <span class="tag">Executive Coaching</span>
+          <span class="tag">Talent Management</span>
+          <span class="tag">Employee Engagement</span>
+          <span class="tag">Succession Planning</span>
+          <span class="tag">Total Rewards Strategy</span>
+          <span class="tag">Governance & Compliance</span>
+          <span class="tag">Payroll Management</span>
+          <span class="tag">Digital HR Transformation</span>
+          <span class="tag">Workforce Analytics</span>
           <span class="tag">Power BI</span>
           <span class="tag">Power Query</span>
           <span class="tag">VBA</span>
           <span class="tag">PowerShell</span>
-          <span class="tag">Process Improvement</span>
-          <span class="tag">GenAI Prototyping</span>
-          <span class="tag">People Analytics</span>
+          <span class="tag">ADP</span>
+          <span class="tag">Ceridian</span>
+          <span class="tag">SAP SuccessFactors</span>
+          <span class="tag">SFTP Data Flows</span>
+          <span class="tag">Responsible AI</span>
         </div>
       </div>
     </section>
@@ -530,10 +619,8 @@
   </main>
 
   <script>
-    // Footer year
     document.getElementById("y").textContent = new Date().getFullYear();
 
-    // Theme: persisted
     const root = document.documentElement;
     const btn = document.getElementById("themeBtn");
     const icon = document.getElementById("themeIcon");
@@ -542,11 +629,9 @@
     function setTheme(theme) {
       root.setAttribute("data-theme", theme);
       localStorage.setItem("theme", theme);
-
       const isDark = theme === "dark";
       icon.textContent = isDark ? "☀" : "☾";
       label.textContent = isDark ? "Light" : "Dark";
-      // text colors are handled via CSS tokens (color: var(--text))
     }
 
     const saved = localStorage.getItem("theme");
@@ -557,7 +642,6 @@
       setTheme(current === "dark" ? "light" : "dark");
     });
 
-    // Keyboard shortcut: T toggles theme
     window.addEventListener("keydown", (e) => {
       if (e.key.toLowerCase() === "t" && !e.metaKey && !e.ctrlKey && !e.altKey) {
         const current = root.getAttribute("data-theme") === "dark" ? "dark" : "light";
@@ -565,7 +649,6 @@
       }
     });
 
-    // Default theme if none saved
     if (!saved) setTheme("light");
   </script>
 </body>
