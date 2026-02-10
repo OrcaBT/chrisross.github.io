@@ -3,21 +3,42 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chris Ross — HR Planning & Steering</title>
-  <meta name="description" content="Chris Ross — Strategic HR Leader blending workforce strategy, analytics, and digital HR transformation." />
+  <title>Chris Ross — Payroll Ops, Analytics & Automation</title>
+  <meta name="description" content="Chris Ross — Payroll operations, analytics, and automation across ADP, Ceridian, and SAP SuccessFactors. Power BI, Power Query, VBA, PowerShell." />
 
   <style>
+    /* ============ THEME TOKENS ============ */
     :root{
       --bg:#ffffff;
       --text:#0b0d10;
       --muted:#5b6472;
       --line:#e7e9ee;
       --card:#f7f8fa;
-      --shadow: 0 10px 35px rgba(0,0,0,.08);
-      --radius: 18px;
-      --max: 1080px;
+      --shadow: 0 12px 40px rgba(0,0,0,.10);
+      --shadow2: 0 20px 60px rgba(0,0,0,.14);
+      --radius: 20px;
+      --max: 1100px;
       --accent:#0a84ff;
+      --accent2:#7c3aed;
+      --glass: rgba(255,255,255,.75);
+      --glass2: rgba(255,255,255,.92);
+      --glow: rgba(10,132,255,.14);
     }
+
+    [data-theme="dark"]{
+      --bg:#0b0d10;
+      --text:#eef2f7;
+      --muted:#a7b0bf;
+      --line:#232a36;
+      --card:#12151b;
+      --shadow: 0 12px 45px rgba(0,0,0,.40);
+      --shadow2: 0 20px 70px rgba(0,0,0,.55);
+      --glass: rgba(11,13,16,.65);
+      --glass2: rgba(18,21,27,.85);
+      --glow: rgba(10,132,255,.18);
+    }
+
+    /* ============ BASE ============ */
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
@@ -25,57 +46,89 @@
       font:16px/1.55 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--text);
       background:
-        radial-gradient(900px 500px at 10% -10%, rgba(10,132,255,.10), transparent 55%),
-        radial-gradient(900px 500px at 90% 0%, rgba(0,0,0,.05), transparent 55%),
+        radial-gradient(950px 520px at 12% -10%, var(--glow), transparent 55%),
+        radial-gradient(900px 520px at 90% 0%, rgba(124,58,237,.10), transparent 55%),
         var(--bg);
+      transition: background .2s ease, color .2s ease;
     }
     a{color:inherit; text-decoration:none}
     a:hover{opacity:.92}
-    .wrap{max-width:var(--max); margin:0 auto; padding:26px 18px 60px}
+
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px}
+
+    /* ============ NAV (STICKY + CTA) ============ */
     .nav{
-      position:sticky; top:0; z-index:5;
+      position:sticky; top:0; z-index:10;
       backdrop-filter: blur(10px);
-      background: rgba(255,255,255,.75);
+      background: linear-gradient(to bottom, var(--glass), rgba(255,255,255,0));
       border-bottom:1px solid var(--line);
     }
-    .nav-inner{max-width:var(--max); margin:0 auto; padding:12px 18px; display:flex; align-items:center; justify-content:space-between; gap:14px}
-    .brand{display:flex; align-items:center; gap:10px; font-weight:650; letter-spacing:.2px}
-    .links{display:flex; gap:10px; flex-wrap:wrap; font-size:14px; color:var(--muted)}
-    .links a{padding:8px 10px; border-radius:12px}
-    .links a:hover{background:rgba(0,0,0,.05); color:var(--text)}
-    .hero{padding:40px 0 16px}
+    .nav-inner{
+      max-width:var(--max); margin:0 auto; padding:12px 18px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:700; letter-spacing:.2px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 6px rgba(10,132,255,.10);
+    }
+    .nav-links{
+      display:flex; gap:6px; flex-wrap:wrap;
+      font-size:14px; color:var(--muted);
+      align-items:center;
+    }
+    .nav-links a{
+      padding:8px 10px; border-radius:12px;
+    }
+    .nav-links a:hover{background:rgba(0,0,0,.05); color:var(--text)}
+    [data-theme="dark"] .nav-links a:hover{background:rgba(255,255,255,.06)}
+    .nav-cta{
+      display:flex; gap:8px; flex-wrap:wrap; align-items:center;
+    }
+
+    /* ============ BUTTONS ============ */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 12px; border-radius:14px;
+      border:1px solid var(--line);
+      background: var(--glass2);
+      box-shadow: var(--shadow);
+      font-weight:650; font-size:13px;
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); box-shadow: var(--shadow2)}
+    .btn.primary{
+      border:none;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#fff;
+    }
+
+    /* ============ LAYOUT ============ */
     .grid{display:grid; gap:16px}
-    @media (min-width: 900px){
+    @media (min-width: 940px){
       .grid.hero-grid{grid-template-columns: 1.35fr .65fr; align-items:start}
       .grid.cols-2{grid-template-columns: 1fr 1fr}
       .grid.cols-3{grid-template-columns: repeat(3, 1fr)}
     }
 
+    /* ============ HERO ============ */
+    .hero{padding:42px 0 18px}
     .pill{
       display:inline-flex; gap:8px; align-items:center;
       border:1px solid var(--line);
-      background:rgba(255,255,255,.7);
+      background: var(--glass2);
       padding:8px 12px; border-radius:999px;
       color:var(--muted); font-size:13px;
     }
-    h1{margin:14px 0 10px; font-size:44px; line-height:1.08; letter-spacing:-.8px}
-    .sub{max-width:75ch; color:var(--muted); font-size:16px; margin:0 0 18px}
+    h1{margin:14px 0 10px; font-size:46px; line-height:1.06; letter-spacing:-.9px}
+    .sub{max-width:80ch; color:var(--muted); font-size:16px; margin:0 0 18px}
 
-    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:11px 14px; border-radius:14px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.85);
-      box-shadow: var(--shadow);
-      font-weight:600; font-size:14px;
-    }
-    .btn.primary{
-      border:none;
-      background: var(--accent);
-      color:#fff;
-    }
-
+    /* ============ CARDS ============ */
     .card{
       background: var(--card);
       border:1px solid var(--line);
@@ -94,9 +147,11 @@
       font-size:12px; color:var(--muted);
       border:1px solid var(--line);
       padding:6px 10px; border-radius:999px;
-      background:rgba(255,255,255,.7);
+      background: rgba(255,255,255,.55);
     }
+    [data-theme="dark"] .tag{background: rgba(255,255,255,.04)}
 
+    /* ============ AVATAR ============ */
     .avatar-wrap{
       display:flex; flex-direction:column; gap:12px; align-items:center;
       padding:18px;
@@ -105,222 +160,368 @@
       width:170px; height:170px; border-radius:50%;
       object-fit:cover;
       border:1px solid var(--line);
-      box-shadow: 0 14px 40px rgba(0,0,0,.12);
+      box-shadow: 0 14px 45px rgba(0,0,0,.18);
       background:#fff;
     }
     .mini{display:flex; flex-direction:column; gap:6px; width:100%}
     .mini strong{font-size:16px}
-    .mini .meta{font-size:13px}
 
-    .item{display:flex; flex-direction:column; gap:8px}
-    .item .top{display:flex; align-items:flex-start; justify-content:space-between; gap:10px}
-    .item a.link{color:var(--accent); font-weight:650; font-size:13px}
+    /* ============ APPLE-ISH PROJECT CARDS ============ */
+    .proj{
+      position:relative;
+      overflow:hidden;
+      padding:18px;
+      transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+    }
+    .proj:hover{
+      transform: translateY(-2px);
+      box-shadow: var(--shadow2);
+      border-color: rgba(10,132,255,.35);
+    }
+    .proj::before{
+      content:"";
+      position:absolute; inset:-120px -120px auto auto;
+      width:260px; height:260px; border-radius:50%;
+      background: radial-gradient(circle at 30% 30%, rgba(10,132,255,.22), transparent 60%);
+      pointer-events:none;
+    }
+    .proj .top{display:flex; align-items:flex-start; justify-content:space-between; gap:10px}
+    .proj h3{margin:0; font-size:16px}
+    .proj a.link{color:var(--accent); font-weight:700; font-size:13px}
     .list{margin:10px 0 0; padding-left:18px; color:var(--muted); font-size:14px}
     .list li{margin:6px 0}
 
-    footer{padding-top:28px; color:var(--muted); font-size:13px; border-top:1px solid var(--line); margin-top:26px}
+    /* ============ METRICS STRIP ============ */
+    .metrics{display:grid; gap:12px}
+    @media (min-width: 940px){
+      .metrics{grid-template-columns: repeat(3, 1fr)}
+    }
+    .metric{
+      padding:14px 16px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: var(--glass2);
+      box-shadow: var(--shadow);
+    }
+    .metric strong{display:block; font-size:18px; letter-spacing:-.2px}
+    .metric span{color:var(--muted); font-size:13px}
+
+    /* ============ THEME TOGGLE ============ */
+    .toggle{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:9px 10px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: var(--glass2);
+      box-shadow: var(--shadow);
+      cursor:pointer;
+      user-select:none;
+      font-weight:650;
+      font-size:13px;
+    }
+    .toggle:active{transform: translateY(1px)}
+    .kbd{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size:12px;
+      color:var(--muted);
+      border:1px solid var(--line);
+      padding:2px 8px;
+      border-radius:999px;
+      background: rgba(255,255,255,.5);
+    }
+    [data-theme="dark"] .kbd{background: rgba(255,255,255,.05)}
+
+    footer{
+      padding-top:28px;
+      color:var(--muted);
+      font-size:13px;
+      border-top:1px solid var(--line);
+      margin-top:26px
+    }
   </style>
 </head>
 
 <body>
+  <!-- NAV -->
   <div class="nav">
     <div class="nav-inner">
-      <div class="brand">Chris Ross</div>
-      <div class="links">
+      <div class="brand"><span class="dot"></span><span>Chris Ross</span></div>
+
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
         <a href="#capabilities">Capabilities</a>
-        <a href="#highlights">Highlights</a>
         <a href="#contact">Contact</a>
+      </div>
+
+      <div class="nav-cta">
+        <a class="btn" href="assets/Chris-Ross-Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+        <a class="btn" href="https://www.linkedin.com/in/chris-ross-942a5017/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn primary" href="mailto:CR.ChrisRoss@gmail.com">Email</a>
+        <button id="themeBtn" class="toggle" type="button" aria-label="Toggle theme">
+          <span id="themeIcon">☾</span>
+          <span id="themeLabel">Dark</span>
+        </button>
       </div>
     </div>
   </div>
 
   <main class="wrap">
+    <!-- HERO -->
     <section class="hero">
       <div class="grid hero-grid">
         <div>
-          <div class="pill">Toronto, ON · MBA, CHRL · HR Planning & Steering</div>
-          <h1>Strategic HR leader blending workforce strategy, analytics, and digital transformation.</h1>
+          <div class="pill">Toronto, ON · Payroll Ops · Analytics & Automation</div>
+          <h1>Payroll operations, made reliable — and measurable.</h1>
           <p class="sub">
-            Strategic Human Resources Business Partner with a track record partnering with senior leaders to drive
-            organizational effectiveness and enterprise transformation across global, regulated environments—using
-            data, analytics, and digital HR solutions to modernize delivery and align talent and rewards strategies.
+            I run payroll operations across ADP, Ceridian, and SAP SuccessFactors, with a focus on clean data,
+            stable SFTP file exchanges, and dependable end-to-end workflows. I build Power BI dashboards from payroll
+            datasets, automate recurring tasks with Power Query, and use VBA and PowerShell scripts to validate,
+            transform, and reconcile data so teams move faster with fewer exceptions.
           </p>
 
-          <div class="cta">
-            <a class="btn primary" href="assets/Chris-Ross-Resume.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a>
-            <a class="btn" href="https://www.linkedin.com/in/chris-ross-942a5017/" target="_blank" rel="noreferrer">LinkedIn</a>
-            <!-- TODO: add your GitHub if you want -->
-            <!-- <a class="btn" href="https://github.com/orcabt" target="_blank" rel="noreferrer">GitHub</a> -->
-            <a class="btn" href="#contact">Contact</a>
+          <div class="metrics" style="margin-top:16px">
+            <div class="metric"><strong>Payroll Platforms</strong><span>ADP · Ceridian · SAP SuccessFactors</span></div>
+            <div class="metric"><strong>Data Operations</strong><span>SFTP feeds · controls · reconciliation</span></div>
+            <div class="metric"><strong>Analytics + Automation</strong><span>Power BI · Power Query · VBA · PowerShell</span></div>
           </div>
+
+          <div class="nav-cta" style="margin-top:16px">
+            <a class="btn primary" href="#projects">See projects</a>
+            <a class="btn" href="assets/Chris-Ross-Resume.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a>
+            <a class="btn" href="https://www.linkedin.com/in/chris-ross-942a5017/" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+
+          <p class="meta" style="margin-top:12px">
+            Tip: press <span class="kbd">T</span> to toggle theme.
+          </p>
         </div>
 
         <aside class="card avatar-wrap">
           <img class="avatar" src="assets/chris-ross.png" alt="Chris Ross headshot" />
           <div class="mini">
-            <strong>Chris Ross, MBA, CHRL</strong>
-            <div class="meta">Manager, HR Planning & Steering — BMW Group</div>
-            <div class="meta">Workforce strategy · Total rewards · HR analytics · Digital HR</div>
+            <strong>Chris Ross</strong>
+            <div class="meta">Payroll Operations · Analytics · Automation</div>
+            <div class="meta">ADP · Ceridian · SAP SuccessFactors · SFTP</div>
+          </div>
+          <div class="tags" style="justify-content:center">
+            <span class="tag">Reliability</span>
+            <span class="tag">Controls</span>
+            <span class="tag">Builder Mindset</span>
           </div>
         </aside>
       </div>
     </section>
 
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="section-title">
+        <h2>Projects</h2><span>Selected work themes (swap in links anytime)</span>
+      </div>
+
+      <div class="grid cols-3">
+        <article class="card proj">
+          <div class="top">
+            <div>
+              <h3>Payroll Data Flows</h3>
+              <p class="meta">SFTP · File validation · Reconciliation</p>
+            </div>
+            <!-- Replace # with a Loom/video/PDF link if you want -->
+            <a class="link" href="#" target="_blank" rel="noreferrer">View ↗</a>
+          </div>
+          <p class="meta" style="margin-top:8px">
+            Built and maintained payroll-related data feeds with controls that keep transfers consistent, traceable,
+            and audit-ready.
+          </p>
+          <ul class="list">
+            <li>Implemented checks for missing files, schema drift, and out-of-range values.</li>
+            <li>Standardized reconciliation steps to speed up issue triage.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Payroll Ops</span><span class="tag">Data Quality</span><span class="tag">Controls</span>
+          </div>
+        </article>
+
+        <article class="card proj">
+          <div class="top">
+            <div>
+              <h3>Power BI Payroll Dashboards</h3>
+              <p class="meta">Power BI · Modeling · KPI definitions</p>
+            </div>
+            <a class="link" href="#" target="_blank" rel="noreferrer">View ↗</a>
+          </div>
+          <p class="meta" style="margin-top:8px">
+            Delivered payroll reporting that leadership can trust — consistent measures, clear definitions,
+            and refresh-ready datasets.
+          </p>
+          <ul class="list">
+            <li>Designed clean data models aligned to payroll structures and reporting cycles.</li>
+            <li>Built operational views for trends, variances, and exceptions.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Dashboards</span><span class="tag">KPIs</span><span class="tag">Decision Support</span>
+          </div>
+        </article>
+
+        <article class="card proj">
+          <div class="top">
+            <div>
+              <h3>Automation Toolkit</h3>
+              <p class="meta">Power Query · VBA · PowerShell</p>
+            </div>
+            <a class="link" href="#" target="_blank" rel="noreferrer">View ↗</a>
+          </div>
+          <p class="meta" style="margin-top:8px">
+            Automated recurring payroll data prep and reporting steps with reusable templates and scripts.
+          </p>
+          <ul class="list">
+            <li>Reduced manual effort with standardized imports, transformations, and validations.</li>
+            <li>Improved repeatability by turning “one-off” processes into documented workflows.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Automation</span><span class="tag">Templates</span><span class="tag">Efficiency</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="card" style="margin-top:16px">
+        <div class="section-title">
+          <h2 style="margin:0;font-size:16px">Want this to feel more “portfolio”?</h2>
+          <span>Easy upgrade</span>
+        </div>
+        <p class="meta">
+          Replace each “View ↗” link with a Loom demo, a 1-page PDF screenshot deck, or a sanitized sample report.
+          If you paste 3–6 links (or screenshots), I’ll rewrite each card into a crisp “problem → approach → impact”
+          format and wire everything up.
+        </p>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
     <section id="experience" class="section">
       <div class="section-title">
-        <h2>Experience</h2><span>Selected roles</span>
+        <h2>Experience</h2><span>Short + clean (expand anytime)</span>
       </div>
 
       <div class="grid cols-2">
-        <article class="card item">
-          <div class="top">
-            <div>
-              <h3 style="margin:0;font-size:16px">BMW Group — Toronto, Canada</h3>
-              <p class="meta">Manager, HR Planning & Steering · Nov 2024 – Current</p>
-            </div>
-          </div>
+        <article class="card">
+          <h3 style="margin:0 0 8px; font-size:16px">Payroll Operations / HR Operations</h3>
+          <p class="meta">ADP · Ceridian · SAP SuccessFactors · SFTP feeds</p>
           <ul class="list">
-            <li>Lead HR planning, analytics, and people operations; set OKRs aligned to divisional objectives.</li>
-            <li>Direct compensation & benefits strategy across multiple entities (~300 employees).</li>
-            <li>Deliver executive workforce insights and predictive simulations for headcount and retention decisions.</li>
-            <li>Integrate responsible AI/automation into HR workflows with governance alignment.</li>
+            <li>Owned payroll workflows and operational readiness across platforms and cycles.</li>
+            <li>Managed data transfers and controls supporting downstream reporting and audits.</li>
+            <li>Improved data quality with repeatable validation and reconciliation routines.</li>
           </ul>
           <div class="tags">
-            <span class="tag">Workforce Planning</span><span class="tag">Total Rewards</span><span class="tag">Analytics</span><span class="tag">Responsible AI</span>
+            <span class="tag">Operations</span><span class="tag">Controls</span><span class="tag">Audit-readiness</span>
           </div>
         </article>
 
-        <article class="card item">
-          <div class="top">
-            <div>
-              <h3 style="margin:0;font-size:16px">BMW Group — Toronto, Canada</h3>
-              <p class="meta">Manager, Human Resources Business Leader · 2020 – Nov 2024</p>
-            </div>
-          </div>
+        <article class="card">
+          <h3 style="margin:0 0 8px; font-size:16px">Analytics & Automation</h3>
+          <p class="meta">Power BI · Power Query · VBA · PowerShell</p>
           <ul class="list">
-            <li>Trusted HR advisor to Sales and Finance leaders; aligned people strategy with commercial performance.</li>
-            <li>Drove leadership effectiveness with sustained engagement/retention improvements.</li>
-            <li>Directed compensation, benefits, and pension administration for a 300-person client group.</li>
+            <li>Built dashboards and operational KPIs for payroll datasets.</li>
+            <li>Automated recurring prep/refresh steps with Power Query and reusable templates.</li>
+            <li>Created scripts for transformation, standardization, and exception handling.</li>
           </ul>
           <div class="tags">
-            <span class="tag">Business Partnering</span><span class="tag">Leadership</span><span class="tag">Rewards</span><span class="tag">Operations</span>
-          </div>
-        </article>
-      </div>
-
-      <div class="grid cols-2" style="margin-top:16px">
-        <article class="card item">
-          <div class="top">
-            <div>
-              <h3 style="margin:0;font-size:16px">Mitsubishi UFJ Financial Group — Toronto, Canada</h3>
-              <p class="meta">AVP, Regional HR Business Partner · 2018 – 2020</p>
-            </div>
-          </div>
-          <ul class="list">
-            <li>Advised leaders across Corporate Banking, Securities, and Risk on workforce strategy and change.</li>
-            <li>Directed annual compensation cycles (merit, bonus, equity) in regulated environments.</li>
-            <li>Strengthened compliance readiness through collaboration with OSFI, FINTRAC, and IIROC.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">Regulated FS</span><span class="tag">Change</span><span class="tag">Comp Cycles</span>
-          </div>
-        </article>
-
-        <article class="card item">
-          <div class="top">
-            <div>
-              <h3 style="margin:0;font-size:16px">Earlier roles</h3>
-              <p class="meta">MUFG (HR Manager, 2012–2018) · AEGON (Employee Experience & Brand Lead, 2009–2010)</p>
-            </div>
-          </div>
-          <ul class="list">
-            <li>Led HR operations through major entity conversion and global standards alignment.</li>
-            <li>Implemented HR systems (Workday, Ceridian, LMS) enabling global integration and adoption.</li>
-            <li>Led employer brand and employee experience initiatives focused on engagement and retention.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">HR Ops</span><span class="tag">HRIS</span><span class="tag">Employee Experience</span>
+            <span class="tag">Power BI</span><span class="tag">Automation</span><span class="tag">Data Quality</span>
           </div>
         </article>
       </div>
     </section>
 
+    <!-- CAPABILITIES -->
     <section id="capabilities" class="section">
       <div class="section-title">
         <h2>Capabilities</h2><span>What I do</span>
       </div>
+
       <div class="card">
         <div class="tags">
-          <span class="tag">Business Partnering</span>
-          <span class="tag">Org Design</span>
-          <span class="tag">Change Management</span>
-          <span class="tag">Executive Coaching</span>
-          <span class="tag">Talent Management</span>
-          <span class="tag">Leadership Development</span>
-          <span class="tag">Succession Planning</span>
-          <span class="tag">Workforce Analytics</span>
-          <span class="tag">Total Rewards Strategy</span>
-          <span class="tag">Governance & Compliance</span>
-          <span class="tag">Payroll Management</span>
-          <span class="tag">Digital HR Transformation</span>
-          <span class="tag">AI & Automation Enablement</span>
-        </div>
-      </div>
-
-      <div class="grid cols-2" style="margin-top:16px">
-        <div class="card">
-          <div class="section-title"><h2 style="margin:0;font-size:16px">Platforms</h2><span>HRIS / ops</span></div>
-          <p class="meta">Workday · SuccessFactors · Ceridian · ADP</p>
-        </div>
-        <div class="card">
-          <div class="section-title"><h2 style="margin:0;font-size:16px">Analytics</h2><span>Reporting & data</span></div>
-          <p class="meta">Power BI · Tableau · Advanced Excel · Python · SQL</p>
+          <span class="tag">Payroll Operations</span>
+          <span class="tag">ADP</span>
+          <span class="tag">Ceridian</span>
+          <span class="tag">SAP SuccessFactors</span>
+          <span class="tag">SFTP Data Flows</span>
+          <span class="tag">Data Validation</span>
+          <span class="tag">Reconciliation</span>
+          <span class="tag">Reporting & Controls</span>
+          <span class="tag">Power BI</span>
+          <span class="tag">Power Query</span>
+          <span class="tag">VBA</span>
+          <span class="tag">PowerShell</span>
+          <span class="tag">Process Improvement</span>
         </div>
       </div>
     </section>
 
-    <section id="highlights" class="section">
-      <div class="section-title">
-        <h2>Highlights</h2><span>Measurable impact themes</span>
-      </div>
-      <div class="grid cols-3">
-        <div class="card">
-          <h3 style="margin:0 0 8px;font-size:16px">Enterprise transformation</h3>
-          <p class="meta">Led large-scale mergers and organizational transformations; redesigned operating models and managed complex change across entities.</p>
-        </div>
-        <div class="card">
-          <h3 style="margin:0 0 8px;font-size:16px">Digital HR modernization</h3>
-          <p class="meta">Enabled digital HR transformation through integration and automation, improving data accuracy and reducing operational friction.</p>
-        </div>
-        <div class="card">
-          <h3 style="margin:0 0 8px;font-size:16px">Total rewards leadership</h3>
-          <p class="meta">Directed compensation and benefits programs to drive pay equity and align rewards with performance.</p>
-        </div>
-      </div>
-    </section>
-
+    <!-- CONTACT -->
     <section id="contact" class="section">
       <div class="section-title">
         <h2>Contact</h2><span>Fastest way to reach me</span>
       </div>
+
       <div class="card">
-        <p class="meta">Email is best: <a href="mailto:CR.ChrisRoss@gmail.com" style="color:var(--accent);font-weight:650">CR.ChrisRoss@gmail.com</a> · 647-231-9786</p>
-        <div class="cta" style="margin-top:12px">
+        <p class="meta">
+          Email: <a href="mailto:CR.ChrisRoss@gmail.com" style="color:var(--accent);font-weight:700">CR.ChrisRoss@gmail.com</a>
+          <span style="opacity:.55">·</span>
+          LinkedIn: <a href="https://www.linkedin.com/in/chris-ross-942a5017/" target="_blank" rel="noreferrer" style="color:var(--accent);font-weight:700">/in/chris-ross-942a5017</a>
+        </p>
+
+        <div class="grid cols-2" style="margin-top:12px">
           <a class="btn primary" href="mailto:CR.ChrisRoss@gmail.com">Email</a>
+          <a class="btn" href="assets/Chris-Ross-Resume.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a>
+        </div>
+
+        <div class="nav-cta" style="margin-top:10px">
           <a class="btn" href="https://www.linkedin.com/in/chris-ross-942a5017/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="btn" href="assets/Chris-Ross-Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
         </div>
       </div>
     </section>
 
     <footer>
-      © <span id="y"></span> Chris Ross
+      © <span id="y"></span> Chris Ross · Built on GitHub Pages
     </footer>
   </main>
 
   <script>
+    // Footer year
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Theme: persisted
+    const root = document.documentElement;
+    const btn = document.getElementById("themeBtn");
+    const icon = document.getElementById("themeIcon");
+    const label = document.getElementById("themeLabel");
+
+    function setTheme(theme) {
+      root.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
+      const isDark = theme === "dark";
+      icon.textContent = isDark ? "☀" : "☾";
+      label.textContent = isDark ? "Light" : "Dark";
+    }
+
+    const saved = localStorage.getItem("theme");
+    if (saved === "dark" || saved === "light") setTheme(saved);
+
+    btn.addEventListener("click", () => {
+      const current = root.getAttribute("data-theme") === "dark" ? "dark" : "light";
+      setTheme(current === "dark" ? "light" : "dark");
+    });
+
+    // Keyboard shortcut: T toggles theme
+    window.addEventListener("keydown", (e) => {
+      if (e.key.toLowerCase() === "t" && !e.metaKey && !e.ctrlKey && !e.altKey) {
+        const current = root.getAttribute("data-theme") === "dark" ? "dark" : "light";
+        setTheme(current === "dark" ? "light" : "dark");
+      }
+    });
+
+    // Default theme if none saved
+    if (!saved) setTheme("light");
   </script>
 </body>
 </html>
