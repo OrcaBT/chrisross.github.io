@@ -3,639 +3,1291 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chris Ross — Strategic HRBP | Digital HR & Ops</title>
-  <meta name="description" content="Chris Ross — Strategic HR Business Partner blending workforce strategy, total rewards, HR operations, analytics, and automation (ADP, Ceridian, SuccessFactors, Power BI, Power Query, VBA, PowerShell)." />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+
+  <title>Chris Ross — Senior HR Leader · MBA, CHRL</title>
+  <meta name="description" content="Chris Ross, MBA, CHRL — senior HR leader with 15+ years advising executive teams in regulated industries. Workday deployment, total rewards transformation, payroll automation, and workforce analytics across automotive financial services and global investment banking." />
+  <meta name="author" content="Chris Ross" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Chris Ross — Senior HR Leader" />
+  <meta property="og:description" content="15+ years building HR infrastructure that scales. Workday. Total rewards. Automation. Analytics." />
+  <meta property="og:image" content="assets/chris-ross.png" />
+  <meta property="og:url" content="https://chrisross.github.io/" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Chris Ross — Senior HR Leader" />
+  <meta name="twitter:description" content="15+ years building HR infrastructure that scales." />
+  <meta name="twitter:image" content="assets/chris-ross.png" />
+
+  <link rel="canonical" href="https://chrisross.github.io/" />
+
+  <!-- Geist — closest free family to SF Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Chris Ross",
+    "honorificSuffix": "MBA, CHRL",
+    "jobTitle": "Manager, HR Planning & Steering",
+    "worksFor": { "@type": "Organization", "name": "BMW Group Canada" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Toronto", "addressRegion": "ON", "addressCountry": "CA" },
+    "email": "mailto:CR.ChrisRoss@gmail.com",
+    "url": "https://chrisross.github.io/",
+    "sameAs": ["https://www.linkedin.com/in/chris-ross-942a5017/"],
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Wilfrid Laurier University" },
+      { "@type": "CollegeOrUniversity", "name": "Toronto Metropolitan University" },
+      { "@type": "CollegeOrUniversity", "name": "Durham College" }
+    ],
+    "knowsAbout": ["Total Rewards","Workforce Analytics","Workday","HR Transformation","Pension Governance","Payroll Operations","Executive Compensation","M&A HR Integration"]
+  }
+  </script>
 
   <style>
     :root{
-      --bg:#ffffff;
-      --text:#0b0d10;
-      --muted:#5b6472;
-      --line:#e7e9ee;
-      --card:#f7f8fa;
-      --shadow: 0 12px 40px rgba(0,0,0,.10);
-      --shadow2: 0 20px 60px rgba(0,0,0,.14);
-      --radius: 20px;
-      --max: 1120px;
-      --accent:#0a84ff;
-      --accent2:#7c3aed;
-      --glass: rgba(255,255,255,.75);
-      --glass2: rgba(255,255,255,.92);
-      --glow: rgba(10,132,255,.14);
+      /* Apple-inspired neutrals */
+      --bg:           #ffffff;
+      --bg-alt:       #f5f5f7;
+      --bg-dark:      #1d1d1f;
+      --ink:          #1d1d1f;
+      --ink-2:        #424245;
+      --muted:        #6e6e73;
+      --muted-2:      #86868b;
+      --line:         #d2d2d7;
+      --line-soft:    #e8e8ed;
+      --accent:       #0071e3;
+      --accent-hover: #0077ed;
+
+      --r-sm:  10px;
+      --r-md:  18px;
+      --r-lg:  28px;
+      --r-pill: 980px;
+
+      --max-narrow: 980px;
+      --max:        1200px;
+      --max-wide:   1400px;
+
+      --sans: "Geist", -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+      --ease: cubic-bezier(.4, 0, .2, 1);
     }
 
     [data-theme="dark"]{
-      --bg:#0b0d10;
-      --text:#eef2f7;
-      --muted:#a7b0bf;
-      --line:#232a36;
-      --card:#12151b;
-      --shadow: 0 12px 45px rgba(0,0,0,.40);
-      --shadow2: 0 20px 70px rgba(0,0,0,.55);
-      --glass: rgba(11,13,16,.65);
-      --glass2: rgba(18,21,27,.85);
-      --glow: rgba(10,132,255,.18);
+      --bg:           #000000;
+      --bg-alt:       #161617;
+      --bg-dark:      #1d1d1f;
+      --ink:          #f5f5f7;
+      --ink-2:        #d2d2d7;
+      --muted:        #a1a1a6;
+      --muted-2:      #86868b;
+      --line:         #2c2c2e;
+      --line-soft:    #1c1c1e;
+      --accent:       #2997ff;
+      --accent-hover: #4ca6ff;
     }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
+    *,*::before,*::after{ box-sizing:border-box }
+    html{ scroll-behavior:smooth; -webkit-text-size-adjust:100% }
     body{
       margin:0;
-      font:16px/1.55 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      color:var(--text);
-      background:
-        radial-gradient(950px 520px at 12% -10%, var(--glow), transparent 55%),
-        radial-gradient(900px 520px at 90% 0%, rgba(124,58,237,.10), transparent 55%),
-        var(--bg);
-      transition: background .2s ease, color .2s ease;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:var(--sans);
+      font-size:17px;
+      line-height:1.47;
+      letter-spacing:-.011em;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+      transition: background .3s var(--ease), color .3s var(--ease);
     }
-    a{color:inherit; text-decoration:none}
-    a:hover{opacity:.92}
+    img{ display:block; max-width:100% }
+    a{ color:inherit; text-decoration:none }
+    a:focus-visible, button:focus-visible{
+      outline:2px solid var(--accent);
+      outline-offset:3px;
+      border-radius:6px;
+    }
 
-    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px}
+    .skip{
+      position:absolute; left:-9999px; top:8px;
+      padding:10px 14px; background:var(--ink); color:var(--bg);
+      border-radius:8px; font-weight:500; z-index:60;
+    }
+    .skip:focus{ left:12px }
 
-    /* NAV */
+    /* ====== TYPOGRAPHY ====== */
+    h1,h2,h3,h4{ margin:0; color:var(--ink); font-weight:600; letter-spacing:-.025em; line-height:1.08; }
+    .display{
+      font-size: clamp(48px, 9vw, 96px);
+      font-weight:700;
+      letter-spacing:-.04em;
+      line-height:1.02;
+    }
+    .h-xl{
+      font-size: clamp(40px, 6vw, 64px);
+      font-weight:600;
+      letter-spacing:-.035em;
+      line-height:1.04;
+    }
+    .h-lg{
+      font-size: clamp(32px, 4.5vw, 48px);
+      font-weight:600;
+      letter-spacing:-.03em;
+      line-height:1.08;
+    }
+    .h-md{
+      font-size: clamp(24px, 2.6vw, 32px);
+      font-weight:600;
+      letter-spacing:-.022em;
+      line-height:1.15;
+    }
+    .h-sm{
+      font-size:20px;
+      font-weight:600;
+      letter-spacing:-.015em;
+      line-height:1.22;
+    }
+    .lead{
+      font-size: clamp(19px, 1.6vw, 23px);
+      font-weight:400;
+      color:var(--ink-2);
+      letter-spacing:-.012em;
+      line-height:1.45;
+    }
+    .eyebrow{
+      font-family:var(--sans);
+      font-size:14px;
+      font-weight:500;
+      letter-spacing:-.01em;
+      color:var(--accent);
+      display:inline-block;
+    }
+    .label{
+      font-family:var(--mono);
+      font-size:11px;
+      font-weight:500;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      color:var(--muted);
+    }
+    p{ margin:0 }
+    .muted{ color:var(--muted) }
+
+    /* ====== NAV ====== */
     .nav{
-      position:sticky; top:0; z-index:10;
-      backdrop-filter: blur(10px);
-      background: linear-gradient(to bottom, var(--glass), rgba(255,255,255,0));
-      border-bottom:1px solid var(--line);
+      position:sticky; top:0; z-index:30;
+      background: color-mix(in srgb, var(--bg) 72%, transparent);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom:1px solid var(--line-soft);
     }
     .nav-inner{
-      max-width:var(--max); margin:0 auto; padding:12px 18px;
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      max-width:var(--max-wide);
+      margin:0 auto;
+      padding:0 22px;
+      height:48px;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px;
     }
-    .brand{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px}
-    .dot{
-      width:10px; height:10px; border-radius:50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 0 0 6px rgba(10,132,255,.10);
+    .brand{
+      font-size:17px;
+      font-weight:500;
+      letter-spacing:-.01em;
+      color:var(--ink);
     }
-    .nav-links{
-      display:flex; gap:6px; flex-wrap:wrap;
-      font-size:14px; color:var(--muted);
-      align-items:center;
+    .brand .sub{ color:var(--muted); font-weight:400; }
+    .nav-links{ display:none; gap:2px; }
+    .nav-links a{
+      padding:8px 12px;
+      font-size:12px;
+      color:var(--ink-2);
+      font-weight:400;
+      letter-spacing:0;
+      border-radius:8px;
+      transition: color .2s var(--ease);
     }
-    .nav-links a{padding:8px 10px; border-radius:12px}
-    .nav-links a:hover{background:rgba(0,0,0,.05); color:var(--text)}
-    [data-theme="dark"] .nav-links a:hover{background:rgba(255,255,255,.06)}
-    .nav-cta{display:flex; gap:8px; flex-wrap:wrap; align-items:center}
+    .nav-links a:hover{ color:var(--accent); }
+    @media (min-width: 880px){ .nav-links{ display:flex } }
+    .nav-actions{ display:flex; gap:10px; align-items:center; }
 
-    /* BUTTONS */
+    /* ====== BUTTONS ====== */
     .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:10px 12px; border-radius:14px;
-      border:1px solid var(--line);
-      background: var(--glass2);
-      box-shadow: var(--shadow);
-      font-weight:650; font-size:13px;
-      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+      display:inline-flex; align-items:center; gap:6px;
+      font-family:var(--sans);
+      font-size:14px;
+      font-weight:400;
+      letter-spacing:-.005em;
+      padding:8px 18px;
+      border-radius:var(--r-pill);
+      border:1px solid transparent;
+      cursor:pointer;
+      transition: all .25s var(--ease);
       white-space:nowrap;
-      color: var(--text);
     }
-    .btn:hover{transform: translateY(-1px); box-shadow: var(--shadow2)}
-    .btn.primary{
-      border:none;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
+    .btn-primary{
+      background:var(--accent);
       color:#fff;
     }
-
-    /* LAYOUT */
-    .grid{display:grid; gap:16px}
-    @media (min-width: 940px){
-      .grid.hero-grid{grid-template-columns: 1.35fr .65fr; align-items:start}
-      .grid.cols-2{grid-template-columns: 1fr 1fr}
-      .grid.cols-3{grid-template-columns: repeat(3, 1fr)}
+    .btn-primary:hover{
+      background:var(--accent-hover);
+      transform:scale(1.02);
     }
-
-    /* HERO */
-    .hero{padding:42px 0 18px}
-    .pill{
-      display:inline-flex; gap:8px; align-items:center;
+    .btn-ghost{
+      background:transparent;
+      color:var(--accent);
+      padding:8px 0;
+    }
+    .btn-ghost:hover{ opacity:.75 }
+    .btn-secondary{
+      background:transparent;
+      color:var(--ink);
+      border-color:var(--ink);
+    }
+    .btn-secondary:hover{
+      background:var(--ink);
+      color:var(--bg);
+    }
+    .btn-lg{
+      font-size:17px;
+      padding:13px 28px;
+    }
+    .theme-btn{
+      width:32px; height:32px;
+      border-radius:50%;
+      background:transparent;
       border:1px solid var(--line);
-      background: var(--glass2);
-      padding:8px 12px; border-radius:999px;
-      color:var(--muted); font-size:13px;
+      color:var(--ink);
+      cursor:pointer;
+      display:inline-flex; align-items:center; justify-content:center;
+      font-size:14px;
+      transition: all .25s var(--ease);
     }
-    h1{margin:14px 0 10px; font-size:46px; line-height:1.06; letter-spacing:-.9px}
-    .sub{max-width:82ch; color:var(--muted); font-size:16px; margin:0 0 18px}
+    .theme-btn:hover{ background:var(--bg-alt); }
 
-    /* CARDS */
-    .card{
-      background: var(--card);
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      padding:16px;
-      box-shadow: var(--shadow);
+    /* ====== LAYOUT ====== */
+    .wrap{ max-width:var(--max); margin:0 auto; padding:0 22px; }
+    .wrap-narrow{ max-width:var(--max-narrow); margin:0 auto; padding:0 22px; }
+    .wrap-wide{ max-width:var(--max-wide); margin:0 auto; padding:0 22px; }
+
+    section{
+      padding: clamp(80px, 12vw, 140px) 0;
     }
-    .section{padding:18px 0}
-    .section-title{display:flex; align-items:baseline; justify-content:space-between; gap:10px; margin-bottom:10px}
-    .section-title h2{margin:0; font-size:18px}
-    .section-title span{color:var(--muted); font-size:13px}
+    section.tight{ padding: clamp(60px, 8vw, 100px) 0; }
+    .bg-alt{ background:var(--bg-alt); }
+    .bg-dark{ background:var(--bg-dark); color:#f5f5f7; }
+    .bg-dark .h-md, .bg-dark .h-lg, .bg-dark h1, .bg-dark h2, .bg-dark h3{ color:#f5f5f7 }
+    .bg-dark .muted, .bg-dark .lead{ color:#a1a1a6 }
+    .bg-dark .label{ color:#86868b }
 
-    .meta{color:var(--muted); font-size:14px; margin:0}
-    .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
-    .tag{
-      font-size:12px; color:var(--muted);
-      border:1px solid var(--line);
-      padding:6px 10px; border-radius:999px;
-      background: rgba(255,255,255,.55);
-    }
-    [data-theme="dark"] .tag{background: rgba(255,255,255,.04)}
-
-    /* AVATAR */
-    .avatar-wrap{display:flex; flex-direction:column; gap:12px; align-items:center; padding:18px}
-    .avatar{
-      width:170px; height:170px; border-radius:50%;
-      object-fit:cover;
-      border:1px solid var(--line);
-      box-shadow: 0 14px 45px rgba(0,0,0,.18);
-      background:#fff;
-    }
-    .mini{display:flex; flex-direction:column; gap:6px; width:100%}
-    .mini strong{font-size:16px}
-
-    /* PROJECT CARDS */
-    .proj{
+    /* ====== HERO ====== */
+    .hero{
+      padding: clamp(60px, 10vw, 120px) 0 clamp(60px, 8vw, 100px);
       position:relative;
       overflow:hidden;
-      padding:18px;
-      transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
     }
-    .proj:hover{
-      transform: translateY(-2px);
-      box-shadow: var(--shadow2);
-      border-color: rgba(10,132,255,.35);
-    }
-    .proj::before{
+    .hero::before{
       content:"";
-      position:absolute; inset:-120px -120px auto auto;
-      width:260px; height:260px; border-radius:50%;
-      background: radial-gradient(circle at 30% 30%, rgba(10,132,255,.22), transparent 60%);
+      position:absolute; inset:0;
+      background:
+        radial-gradient(ellipse 80% 50% at 70% 0%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 60%),
+        radial-gradient(ellipse 60% 60% at 0% 100%, color-mix(in srgb, var(--accent) 5%, transparent), transparent 60%);
       pointer-events:none;
+      z-index:0;
     }
-    .proj .top{display:flex; align-items:flex-start; justify-content:space-between; gap:10px}
-    .proj h3{margin:0; font-size:16px}
-    .list{margin:10px 0 0; padding-left:18px; color:var(--muted); font-size:14px}
-    .list li{margin:6px 0}
-
-    /* METRICS */
-    .metrics{display:grid; gap:12px}
-    @media (min-width: 940px){ .metrics{grid-template-columns: repeat(3, 1fr)} }
-    .metric{
-      padding:14px 16px;
-      border-radius: var(--radius);
-      border:1px solid var(--line);
-      background: var(--glass2);
-      box-shadow: var(--shadow);
+    .hero > .wrap{ position:relative; z-index:1 }
+    .hero-content{
+      max-width:920px;
+      display:flex; flex-direction:column;
+      gap:32px;
     }
-    .metric strong{display:block; font-size:18px; letter-spacing:-.2px}
-    .metric span{color:var(--muted); font-size:13px}
-
-    /* TOGGLE */
-    .toggle{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:9px 10px;
-      border-radius:14px;
-      border:1px solid var(--line);
-      background: var(--glass2);
-      box-shadow: var(--shadow);
-      cursor:pointer;
-      user-select:none;
-      font-weight:650;
+    .hero .eyebrow{ display:flex; align-items:center; gap:10px; }
+    .hero .eyebrow::before{
+      content:"";
+      width:6px; height:6px; border-radius:50%;
+      background:var(--accent);
+      display:inline-block;
+    }
+    .hero-actions{
+      display:flex; gap:18px; align-items:center; flex-wrap:wrap;
+      padding-top:8px;
+    }
+    .hero-stats{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:36px 28px;
+      padding-top: clamp(48px, 6vw, 72px);
+      margin-top: clamp(40px, 5vw, 56px);
+      border-top:1px solid var(--line);
+    }
+    @media (min-width: 760px){
+      .hero-stats{ grid-template-columns: repeat(4, 1fr); }
+    }
+    .hero-stat .num{
+      font-size: clamp(32px, 4vw, 44px);
+      font-weight:600;
+      letter-spacing:-.03em;
+      color:var(--ink);
+      line-height:1;
+      display:block;
+      margin-bottom:10px;
+    }
+    .hero-stat .desc{
       font-size:13px;
-      color: var(--text);
+      color:var(--muted);
+      letter-spacing:-.005em;
+      line-height:1.4;
     }
-    .toggle:active{transform: translateY(1px)}
-    .kbd{
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+    /* ====== SECTION HEAD ====== */
+    .section-head{
+      max-width:780px;
+      margin-bottom: clamp(48px, 6vw, 80px);
+      display:flex; flex-direction:column; gap:18px;
+    }
+    .section-head .lead{ max-width:640px; }
+
+    /* ====== HIGHLIGHTS — Apple-environment-page style ====== */
+    .highlights{
+      display:grid;
+      gap:1px;
+      background:var(--line-soft);
+      border-radius:var(--r-lg);
+      overflow:hidden;
+    }
+    @media (min-width: 720px){ .highlights{ grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1080px){ .highlights{ grid-template-columns: repeat(3, 1fr); } }
+    .highlight{
+      background:var(--bg);
+      padding: clamp(32px, 4vw, 48px);
+      display:flex; flex-direction:column; gap:14px;
+      min-height:280px;
+      transition: background .3s var(--ease);
+    }
+    .highlight:hover{ background: color-mix(in srgb, var(--accent) 3%, var(--bg)); }
+    .highlight .num{
+      font-size: clamp(48px, 6vw, 72px);
+      font-weight:700;
+      letter-spacing:-.04em;
+      line-height:.95;
+      color:var(--ink);
+      margin-bottom:6px;
+    }
+    .highlight .num .unit{
+      font-size:.4em; font-weight:500; color:var(--muted);
+      letter-spacing:-.01em;
+      margin-left:6px;
+      vertical-align: super;
+      top:-.2em;
+      position:relative;
+    }
+    .highlight h3{
+      font-size:19px; font-weight:600;
+      letter-spacing:-.018em;
+    }
+    .highlight p{
+      font-size:15px;
+      color:var(--ink-2);
+      line-height:1.5;
+      letter-spacing:-.008em;
+    }
+    .highlight .org{
+      margin-top:auto;
+      padding-top:18px;
+      font-family:var(--mono);
+      font-size:11px;
+      letter-spacing:.06em;
+      color:var(--muted);
+      text-transform:uppercase;
+    }
+
+    /* ====== CAPABILITIES ====== */
+    .cap-grid{
+      display:grid; gap: clamp(40px, 5vw, 72px);
+    }
+    @media (min-width: 880px){ .cap-grid{ grid-template-columns: repeat(3, 1fr); } }
+    .cap-item{ display:flex; flex-direction:column; gap:16px; }
+    .cap-item .num-label{
+      font-family:var(--mono);
+      font-size:12px;
+      color:var(--accent);
+      letter-spacing:.06em;
+    }
+    .cap-item h3{ margin-bottom:4px; }
+    .cap-item p{
+      font-size:15px;
+      color:var(--ink-2);
+      line-height:1.55;
+    }
+    .cap-item ul{
+      list-style:none; padding:0; margin:8px 0 0;
+      display:flex; flex-direction:column; gap:10px;
+    }
+    .cap-item li{
+      font-size:14px;
+      color:var(--ink-2);
+      line-height:1.5;
+      padding-left:20px;
+      position:relative;
+    }
+    .cap-item li::before{
+      content:"";
+      position:absolute; left:0; top:9px;
+      width:8px; height:1px;
+      background:var(--accent);
+    }
+
+    /* ====== PROJECT CARDS ====== */
+    .proj-grid{
+      display:grid; gap:24px;
+    }
+    @media (min-width: 760px){ .proj-grid{ grid-template-columns: repeat(2, 1fr); } }
+    .proj-card{
+      background:var(--bg);
+      border-radius:var(--r-lg);
+      padding: clamp(32px, 4vw, 48px);
+      display:flex; flex-direction:column; gap:14px;
+      transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+      border:1px solid var(--line-soft);
+    }
+    .proj-card:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,.06);
+    }
+    .proj-card h3{ font-size:24px; letter-spacing:-.022em; }
+    .proj-card p{
+      font-size:15px;
+      color:var(--ink-2);
+      line-height:1.55;
+    }
+    .stack{
+      display:flex; flex-wrap:wrap; gap:6px;
+      margin-top:8px;
+    }
+    .chip{
+      font-family:var(--mono);
+      font-size:11px;
+      color:var(--ink-2);
+      padding:5px 11px;
+      border-radius:var(--r-pill);
+      background:var(--bg-alt);
+      letter-spacing:-.005em;
+    }
+    [data-theme="dark"] .chip{ background:var(--line-soft); }
+
+    /* ====== GOVERNANCE ====== */
+    .gov{
+      display:grid; gap:24px;
+    }
+    @media (min-width: 800px){ .gov{ grid-template-columns: 1fr 1fr; } }
+    .gov-card{
+      padding: clamp(36px, 4.5vw, 56px);
+      border-radius:var(--r-lg);
+      background:var(--bg);
+      border:1px solid var(--line-soft);
+      display:flex; flex-direction:column; gap:14px;
+    }
+    .gov-card .badge{
+      display:inline-flex; align-items:center; gap:6px;
+      align-self:flex-start;
+      padding:5px 12px;
+      border-radius:var(--r-pill);
+      background:color-mix(in srgb, var(--accent) 12%, transparent);
+      color:var(--accent);
+      font-size:12px; font-weight:500;
+      letter-spacing:-.005em;
+    }
+    .gov-card h3{ font-size:26px; letter-spacing:-.024em; }
+    .gov-card p{
+      font-size:15px;
+      color:var(--ink-2);
+      line-height:1.55;
+    }
+
+    /* ====== EXPERIENCE ====== */
+    .exp-list{ display:flex; flex-direction:column; gap: clamp(48px, 6vw, 80px); }
+    .exp-block{
+      display:grid; gap: clamp(24px, 3vw, 48px);
+      grid-template-columns: 1fr;
+      padding-bottom: clamp(48px, 6vw, 80px);
+      border-bottom:1px solid var(--line);
+    }
+    .exp-block:last-child{ border-bottom:none; padding-bottom:0; }
+    @media (min-width: 820px){ .exp-block{ grid-template-columns: 280px 1fr; } }
+    .exp-meta{ }
+    .exp-meta .org{
+      font-size:22px;
+      font-weight:600;
+      letter-spacing:-.022em;
+      margin-bottom:4px;
+    }
+    .exp-meta .industry{
+      font-size:13px;
+      color:var(--muted);
+      margin-bottom:14px;
+    }
+    .exp-roles{ display:flex; flex-direction:column; gap: clamp(28px, 3vw, 40px); }
+    .role-head{
+      display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px;
+      align-items:baseline;
+      margin-bottom:8px;
+    }
+    .role-head .role-title{
+      font-size:18px;
+      font-weight:600;
+      letter-spacing:-.015em;
+    }
+    .role-head .dates{
+      font-family:var(--mono);
       font-size:12px;
       color:var(--muted);
-      border:1px solid var(--line);
-      padding:2px 8px;
-      border-radius:999px;
-      background: rgba(255,255,255,.5);
+      letter-spacing:.02em;
     }
-    [data-theme="dark"] .kbd{background: rgba(255,255,255,.05)}
-
-    footer{
-      padding-top:28px;
+    .role-scope{
+      font-size:13.5px;
       color:var(--muted);
+      margin-bottom:16px;
+      padding:10px 14px;
+      background:var(--bg-alt);
+      border-radius:var(--r-sm);
+      line-height:1.5;
+    }
+    .role ul{
+      margin:0; padding:0; list-style:none;
+      display:flex; flex-direction:column; gap:12px;
+    }
+    .role li{
+      font-size:15px;
+      color:var(--ink-2);
+      line-height:1.55;
+      padding-left:24px;
+      position:relative;
+    }
+    .role li::before{
+      content:"";
+      position:absolute; left:0; top:11px;
+      width:10px; height:1px;
+      background:var(--accent);
+    }
+    .role li strong{ color:var(--ink); font-weight:600; }
+
+    /* ====== CREDENTIALS ====== */
+    .cred-grid{ display:grid; gap: clamp(40px, 5vw, 64px); }
+    @media (min-width: 760px){ .cred-grid{ grid-template-columns: 1fr 1fr; } }
+    .cred-section h3{
+      font-size:14px;
+      font-family:var(--mono);
+      font-weight:500;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      color:var(--muted);
+      margin-bottom:24px;
+    }
+    .cred-list{
+      list-style:none; padding:0; margin:0;
+      display:flex; flex-direction:column;
+    }
+    .cred-list li{
+      padding:20px 0;
+      border-bottom:1px solid var(--line-soft);
+      display:flex; flex-direction:column; gap:4px;
+    }
+    .cred-list li:last-child{ border-bottom:none; }
+    .cred-list .title{
+      font-size:17px;
+      font-weight:500;
+      letter-spacing:-.012em;
+    }
+    .cred-list .sub{
       font-size:13px;
-      border-top:1px solid var(--line);
-      margin-top:26px
+      color:var(--muted);
+      font-family:var(--mono);
+      letter-spacing:.02em;
+    }
+
+    /* ====== STACK ====== */
+    .stack-grid{ display:grid; gap: clamp(32px, 4vw, 48px); }
+    @media (min-width: 720px){ .stack-grid{ grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1080px){ .stack-grid{ grid-template-columns: repeat(4, 1fr); } }
+    .stack-group h3{
+      font-family:var(--mono);
+      font-size:11px;
+      font-weight:500;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      color:var(--accent);
+      margin-bottom:18px;
+    }
+    .stack-group ul{ list-style:none; padding:0; margin:0; }
+    .stack-group li{
+      padding:14px 0;
+      font-size:16px;
+      letter-spacing:-.012em;
+      color:var(--ink);
+      border-bottom:1px solid var(--line-soft);
+    }
+    .stack-group li:last-child{ border-bottom:none; }
+
+    /* ====== CONTACT ====== */
+    .contact{
+      padding: clamp(80px, 10vw, 140px) 0;
+      background:var(--bg-dark);
+      color:#f5f5f7;
+    }
+    .contact h2{ color:#f5f5f7; }
+    .contact .lead{ color:#a1a1a6; }
+    .contact .eyebrow{ color:#2997ff; }
+    .contact-grid{
+      display:grid; gap:48px;
+    }
+    @media (min-width: 880px){ .contact-grid{ grid-template-columns: 1.1fr .9fr; align-items:start; } }
+    .contact-links{ display:flex; flex-direction:column; gap:12px; }
+    .contact-link{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:22px 26px;
+      border-radius:var(--r-md);
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.08);
+      transition: all .25s var(--ease);
+    }
+    .contact-link:hover{
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.16);
+      transform: translateY(-2px);
+    }
+    .contact-link .clabel{
+      font-family:var(--mono);
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      color:#86868b;
+      margin-bottom:6px;
+    }
+    .contact-link .cval{
+      font-size:17px;
+      font-weight:500;
+      letter-spacing:-.012em;
+      color:#f5f5f7;
+    }
+    .contact-link .arrow{
+      font-size:22px;
+      color:#2997ff;
+      transition: transform .25s var(--ease);
+    }
+    .contact-link:hover .arrow{ transform: translateX(4px); }
+
+    /* ====== FOOTER ====== */
+    footer{
+      padding: 40px 0 56px;
+      background:var(--bg-dark);
+      color:#86868b;
+      border-top:1px solid #2c2c2e;
+    }
+    footer .wrap-wide{
+      display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px;
+      font-size:12px;
+      letter-spacing:-.005em;
+    }
+    .kbd{
+      font-family:var(--mono);
+      font-size:11px;
+      padding:2px 7px;
+      border:1px solid #2c2c2e;
+      border-radius:5px;
+      background: rgba(255,255,255,.04);
+      color:#a1a1a6;
+    }
+
+    /* ====== HERO PORTRAIT (subtle, integrated) ====== */
+    .hero-portrait-row{
+      display:flex; align-items:center; gap:16px;
+      padding-bottom:8px;
+    }
+    .hero-portrait{
+      width:44px; height:44px;
+      border-radius:50%;
+      object-fit:cover;
+      background:var(--bg-alt);
+      border:1px solid var(--line-soft);
+    }
+    .hero-portrait-text{
+      font-size:14px;
+      color:var(--muted);
+      letter-spacing:-.008em;
+    }
+    .hero-portrait-text strong{
+      color:var(--ink);
+      font-weight:500;
+    }
+
+    /* Subtle reveal on scroll */
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal{
+        opacity:0;
+        transform: translateY(16px);
+        transition: opacity .8s var(--ease), transform .8s var(--ease);
+      }
+      .reveal.in{ opacity:1; transform:none; }
     }
   </style>
 </head>
 
 <body>
-  <div class="nav">
+  <a href="#main" class="skip">Skip to content</a>
+
+  <header class="nav" role="banner">
     <div class="nav-inner">
-      <div class="brand"><span class="dot"></span><span>Chris Ross</span></div>
+      <a href="#" class="brand" aria-label="Chris Ross — home">
+        Chris Ross <span class="sub">· HR Leader</span>
+      </a>
 
-      <div class="nav-links">
-        <a href="#hrbp">HRBP</a>
-        <a href="#digital">Digital</a>
-        <a href="#experience">Experience</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#highlights">Highlights</a>
         <a href="#capabilities">Capabilities</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#credentials">Credentials</a>
         <a href="#contact">Contact</a>
-      </div>
+      </nav>
 
-      <div class="nav-cta">
-        <a class="btn" href="assets/Chris-Ross-Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
-        <a class="btn" href="https://www.linkedin.com/in/chris-ross-942a5017/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a class="btn primary" href="mailto:CR.ChrisRoss@gmail.com">Email</a>
-        <button id="themeBtn" class="toggle" type="button" aria-label="Toggle theme">
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="assets/Chris-Ross-Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+        <button id="themeBtn" class="theme-btn" type="button" aria-label="Toggle color theme">
           <span id="themeIcon" aria-hidden="true">☾</span>
-          <span id="themeLabel">Dark</span>
         </button>
       </div>
     </div>
-  </div>
+  </header>
 
-  <main class="wrap">
-    <section class="hero">
-      <div class="grid hero-grid">
-        <div>
-          <div class="pill">Toronto, ON · Strategic HR Business Partner · Digital HR</div>
-          <h1>Strategic HRBP with a builder mindset.</h1>
-          <p class="sub">
-            I partner with senior leaders to drive workforce strategy, organizational effectiveness, and transformation—
-            then back it up with scalable HR operations and digital solutions. My work spans total rewards governance,
-            people analytics and dashboards, and automation across HR/payroll data flows (ADP, Ceridian, SAP SuccessFactors + SFTP),
-            with practical AI/ML prototypes where it adds value.
-          </p>
+  <main id="main">
 
-          <div class="metrics" style="margin-top:16px">
-            <div class="metric"><strong>HRBP & Strategy</strong><span>Org effectiveness · change · talent</span></div>
-            <div class="metric"><strong>Total Rewards</strong><span>Merit · bonus · pension governance</span></div>
-            <div class="metric"><strong>Digital Ops</strong><span>Power BI · automation · HR/payroll platforms</span></div>
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="hero-content">
+          <div class="hero-portrait-row">
+            <img class="hero-portrait" src="assets/chris-ross.png" alt="Chris Ross" loading="eager" decoding="async" />
+            <div class="hero-portrait-text">
+              <strong>Chris Ross</strong>&nbsp;&nbsp;MBA, CHRL · Toronto, ON
+            </div>
           </div>
 
-          <div class="nav-cta" style="margin-top:16px">
-            <a class="btn primary" href="#hrbp">HRBP highlights</a>
-            <a class="btn" href="#digital">Digital projects</a>
-            <a class="btn" href="assets/Chris-Ross-Resume.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a>
+          <h1 id="hero-title" class="display">
+            HR&nbsp;built<br/>to&nbsp;scale.
+          </h1>
+
+          <p class="lead">
+            Senior HR leader with 15+ years advising executive teams in regulated industries — automotive financial services, global corporate &amp; investment banking, and insurance. Track record across Workday deployment, entity restructuring, total rewards transformation, and payroll automation.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="#highlights">See the work</a>
+            <a class="btn btn-ghost btn-lg" href="#experience">Experience &rsaquo;</a>
           </div>
 
-          <p class="meta" style="margin-top:12px">
-            Tip: press <span class="kbd">T</span> to toggle theme.
-          </p>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="num">15+</span>
+              <span class="desc">Years in regulated industries</span>
+            </div>
+            <div class="hero-stat">
+              <span class="num">$40M</span>
+              <span class="desc">HR budget under management</span>
+            </div>
+            <div class="hero-stat">
+              <span class="num">14</span>
+              <span class="desc">Country Workday rollout</span>
+            </div>
+            <div class="hero-stat">
+              <span class="num">$40B+</span>
+              <span class="desc">Portfolio at peak tenure</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section id="highlights" class="bg-alt" aria-labelledby="hl-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Selected Highlights</span>
+          <h2 id="hl-title" class="h-xl">Outcomes, not titles.</h2>
+          <p class="lead">Six programs where strategy, governance, and execution had to land at the same time.</p>
         </div>
 
-        <aside class="card avatar-wrap">
-          <img class="avatar" src="assets/chris-ross.png" alt="Chris Ross headshot" />
-          <div class="mini">
-            <strong>Chris Ross, MBA, CHRL</strong>
-            <div class="meta">Manager, HR Planning & Steering (BMW Group)</div>
-            <div class="meta">HRBP · Rewards · Analytics · Digital HR</div>
-          </div>
-          <div class="tags" style="justify-content:center">
-            <span class="tag">Executive Partner</span>
-            <span class="tag">Regulated Environments</span>
-            <span class="tag">Builder Mindset</span>
-          </div>
-        </aside>
-      </div>
-    </section>
+        <div class="highlights reveal">
+          <article class="highlight">
+            <div class="num">14<span class="unit">countries</span></div>
+            <h3>Simultaneous Workday deployment</h3>
+            <p>Canada country lead on a global rollout — configuration, data migration, change management, and go-live across a complex multi-jurisdiction program.</p>
+            <span class="org">MUFG · Global Banking</span>
+          </article>
 
-    <!-- HRBP -->
-    <section id="hrbp" class="section">
-      <div class="section-title">
-        <h2>HR Business Partnering</h2><span>How I drive outcomes</span>
-      </div>
+          <article class="highlight">
+            <div class="num">$40B<span class="unit">+ portfolio</span></div>
+            <h3>Entity conversion · subsidiary to branch</h3>
+            <p>HR operations and payroll lead through a structural conversion that unlocked balance sheet access. Portfolio scaled from $2.5B to $40B+ during tenure.</p>
+            <span class="org">MUFG · Global Banking</span>
+          </article>
 
-      <div class="grid cols-3">
-        <article class="card proj">
-          <div class="top">
-            <div>
-              <h3>Workforce Strategy & Org Effectiveness</h3>
-              <p class="meta">Operating models · org design · planning</p>
-            </div>
-          </div>
-          <p class="meta" style="margin-top:8px">
-            Partner with leaders to align structure, talent, and priorities to business strategy—turning “where we’re going”
-            into a clear org and workforce plan.
-          </p>
-          <ul class="list">
-            <li>Set OKRs and workforce priorities aligned to divisional objectives.</li>
-            <li>Use analytics to inform headcount and retention decisions.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">Business Partnering</span><span class="tag">Org Development</span><span class="tag">Analytics</span>
-          </div>
-        </article>
+          <article class="highlight">
+            <div class="num">$700K<span class="unit">/ year</span></div>
+            <h3>Total rewards restructuring</h3>
+            <p>Led market benchmarking and program redesign across Canadian automotive financial services — annual savings without compromising market competitiveness.</p>
+            <span class="org">BMW Group · Automotive FS</span>
+          </article>
 
-        <article class="card proj">
-          <div class="top">
-            <div>
-              <h3>Transformation & Change</h3>
-              <p class="meta">Mergers · redesign · execution</p>
-            </div>
-          </div>
-          <p class="meta" style="margin-top:8px">
-            Lead complex transformations by clarifying the future state, aligning stakeholders, and translating change into
-            practical steps teams can execute.
-          </p>
-          <ul class="list">
-            <li>Redesign operating models and align talent to future-state needs.</li>
-            <li>Strengthen governance and operational readiness across entities.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">Change</span><span class="tag">Operating Model</span><span class="tag">Governance</span>
-          </div>
-        </article>
+          <article class="highlight">
+            <div class="num">25<span class="unit">hires / 12 mo</span></div>
+            <h3>Canadian quant risk build-out</h3>
+            <p>Deployed a low-cost geo strategy and built a new quantitative risk division from scratch — specialized hires servicing New York and San Francisco trading floors.</p>
+            <span class="org">MUFG · Global Banking</span>
+          </article>
 
-        <article class="card proj">
-          <div class="top">
-            <div>
-              <h3>Total Rewards Leadership</h3>
-              <p class="meta">Comp · benefits · pay equity</p>
-            </div>
-          </div>
-          <p class="meta" style="margin-top:8px">
-            Direct compensation and benefits programs with strong governance—supporting competitiveness, equity,
-            and performance alignment.
-          </p>
-          <ul class="list">
-            <li>Manage merit, bonus, and pension governance across multi-entity populations.</li>
-            <li>Drive clarity with consistent frameworks and decision-ready reporting.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">Rewards</span><span class="tag">Equity</span><span class="tag">Leadership</span>
-          </div>
-        </article>
-      </div>
-    </section>
+          <article class="highlight">
+            <div class="num">50%<span class="unit">+ efficiency</span></div>
+            <h3>HR &amp; payroll automation</h3>
+            <p>Architected a Python, VBA, Power Query, and API integration stack across payroll and operations — eliminating manual reconciliation across providers.</p>
+            <span class="org">BMW Group · Automotive FS</span>
+          </article>
 
-    <!-- DIGITAL -->
-    <section id="digital" class="section">
-      <div class="section-title">
-        <h2>Digital & Operations Projects</h2><span>Systems, data, and automation</span>
-      </div>
-
-      <div class="grid cols-3">
-        <article class="card proj">
-          <div class="top">
-            <div>
-              <h3>Payroll Data Flows</h3>
-              <p class="meta">ADP · Ceridian · SuccessFactors · SFTP</p>
-            </div>
-          </div>
-          <p class="meta" style="margin-top:8px">
-            Built and maintained HR/payroll data feeds with controls that keep transfers consistent, traceable, and reliable.
-          </p>
-          <ul class="list">
-            <li>Validation checks for missing files, schema drift, and out-of-range values.</li>
-            <li>Standardized reconciliation steps to speed issue triage.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">Payroll Ops</span><span class="tag">Data Quality</span><span class="tag">Controls</span>
-          </div>
-        </article>
-
-        <article class="card proj">
-          <div class="top">
-            <div>
-              <h3>Power BI Dashboards</h3>
-              <p class="meta">HR & payroll insights · KPI definitions</p>
-            </div>
-          </div>
-          <p class="meta" style="margin-top:8px">
-            Built dashboards leaders can trust—clean models, consistent measures, and refresh-ready datasets.
-          </p>
-          <ul class="list">
-            <li>Operational views for trends, variances, and exceptions.</li>
-            <li>Standardized definitions to reduce “multiple versions of the truth.”</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">Dashboards</span><span class="tag">Decision Support</span><span class="tag">KPIs</span>
-          </div>
-        </article>
-
-        <article class="card proj">
-          <div class="top">
-            <div>
-              <h3>Automation Toolkit</h3>
-              <p class="meta">Power Query · VBA · PowerShell</p>
-            </div>
-          </div>
-          <p class="meta" style="margin-top:8px">
-            Automated recurring data prep and reporting steps with reusable templates and scripts.
-          </p>
-          <ul class="list">
-            <li>Standardized imports, transformations, and validations.</li>
-            <li>Improved repeatability by turning “one-off” tasks into workflows.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">Automation</span><span class="tag">Efficiency</span><span class="tag">Templates</span>
-          </div>
-        </article>
-
-        <article class="card proj">
-          <div class="top">
-            <div>
-              <h3>Responsible AI Enablement</h3>
-              <p class="meta">HR workflows · governance-first</p>
-            </div>
-          </div>
-          <p class="meta" style="margin-top:8px">
-            Integrated responsible AI and automation into HR workflows to improve planning, analytics, and operational efficiency.
-          </p>
-          <ul class="list">
-            <li>Guardrails for ethical use, data integrity, and governance alignment.</li>
-            <li>Practical use-cases focused on measurable cycle-time reduction.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">GenAI</span><span class="tag">Governance</span><span class="tag">Enablement</span>
-          </div>
-        </article>
-
-        <article class="card proj">
-          <div class="top">
-            <div>
-              <h3>Workforce Insights Prototype</h3>
-              <p class="meta">Analytics · scenarios · simulations</p>
-            </div>
-          </div>
-          <p class="meta" style="margin-top:8px">
-            Built early-stage scenario views to support leadership decisions on headcount and retention.
-          </p>
-          <ul class="list">
-            <li>Clear metrics and definitions leaders can interpret quickly.</li>
-            <li>“What-if” style reporting for planning conversations.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">People Analytics</span><span class="tag">Scenarios</span><span class="tag">Planning</span>
-          </div>
-        </article>
-
-        <article class="card proj">
-          <div class="top">
-            <div>
-              <h3>Data Processing Scripts</h3>
-              <p class="meta">PowerShell · VBA · standardization</p>
-            </div>
-          </div>
-          <p class="meta" style="margin-top:8px">
-            Lightweight scripts for transformation, standardization, and exception handling across HR datasets.
-          </p>
-          <ul class="list">
-            <li>Automated file prep steps for consistent outputs.</li>
-            <li>Improved traceability and auditability of transformations.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">Scripting</span><span class="tag">Data Quality</span><span class="tag">Ops</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section">
-      <div class="section-title">
-        <h2>Experience</h2><span>Selected roles</span>
-      </div>
-
-      <div class="grid cols-2">
-        <article class="card">
-          <h3 style="margin:0 0 8px; font-size:16px">BMW Group — Toronto, Canada</h3>
-          <p class="meta">Manager, HR Planning & Steering · Nov 2024 – Current</p>
-          <ul class="list">
-            <li>Lead HR planning, analytics, and people operations; set OKRs aligned to divisional objectives.</li>
-            <li>Direct compensation and benefits strategy across multiple entities (~300 employees).</li>
-            <li>Deliver executive workforce insights and predictive simulations for headcount/retention decisions.</li>
-            <li>Integrate responsible AI and automation into HR workflows.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">HRBP</span><span class="tag">Analytics</span><span class="tag">Rewards</span><span class="tag">Governance</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3 style="margin:0 0 8px; font-size:16px">BMW Group — Toronto, Canada</h3>
-          <p class="meta">Manager, Human Resources Business Leader · 2020 – Nov 2024</p>
-          <ul class="list">
-            <li>Trusted HR advisor to Sales and Finance leaders; aligned people strategy with performance and resilience.</li>
-            <li>Partnered with executives to improve leadership effectiveness and sustain engagement/retention gains.</li>
-            <li>Directed compensation, benefits, and pension administration for a 300-person client group.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">Business Partnering</span><span class="tag">Leadership</span><span class="tag">Rewards</span>
-          </div>
-        </article>
-      </div>
-
-      <div class="grid cols-2" style="margin-top:16px">
-        <article class="card">
-          <h3 style="margin:0 0 8px; font-size:16px">Mitsubishi UFJ Financial Group — Toronto, Canada</h3>
-          <p class="meta">AVP, Regional HR Business Partner · 2018 – 2020</p>
-          <ul class="list">
-            <li>Advised leaders across Corporate Banking, Securities, and Risk on workforce strategy and change.</li>
-            <li>Directed annual compensation cycles (merit, bonus, equity) across regulated entities.</li>
-            <li>Strengthened compliance and operational readiness in partnership with regulators.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">Regulated FS</span><span class="tag">Change</span><span class="tag">Comp Cycles</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3 style="margin:0 0 8px; font-size:16px">MUFG / AEGON — Earlier roles</h3>
-          <p class="meta">HR Manager (2012–2018) · Employee Experience & Brand Lead (2009–2010)</p>
-          <ul class="list">
-            <li>Oversaw HR operations during major entity conversion; aligned policies and structures to global standards.</li>
-            <li>Implemented HR systems (Workday, Ceridian, LMS) for global integration and adoption.</li>
-            <li>Led employee experience and employer brand initiatives to support retention and engagement.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">HR Ops</span><span class="tag">HRIS</span><span class="tag">Employee Experience</span>
-          </div>
-        </article>
+          <article class="highlight">
+            <div class="num">$3.5M<span class="unit">+ secured</span></div>
+            <h3>COVID relief program</h3>
+            <p>Owned the Canadian relief program end-to-end, securing government subsidies during a period requiring rapid policy interpretation and operational delivery.</p>
+            <span class="org">BMW Group · Automotive FS</span>
+          </article>
+        </div>
       </div>
     </section>
 
     <!-- CAPABILITIES -->
-    <section id="capabilities" class="section">
-      <div class="section-title">
-        <h2>Capabilities</h2><span>What I do</span>
-      </div>
+    <section id="capabilities" aria-labelledby="cap-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Capabilities</span>
+          <h2 id="cap-title" class="h-xl">Where I operate.</h2>
+          <p class="lead">Strategic partnership at the executive level, backed by operational depth across rewards, analytics, and HR systems.</p>
+        </div>
 
-      <div class="card">
-        <div class="tags">
-          <span class="tag">Strategic HR Leadership</span>
-          <span class="tag">Business Partnering</span>
-          <span class="tag">Org Development</span>
-          <span class="tag">Change Management</span>
-          <span class="tag">Executive Coaching</span>
-          <span class="tag">Talent Management</span>
-          <span class="tag">Employee Engagement</span>
-          <span class="tag">Succession Planning</span>
-          <span class="tag">Total Rewards Strategy</span>
-          <span class="tag">Governance & Compliance</span>
-          <span class="tag">Payroll Management</span>
-          <span class="tag">Digital HR Transformation</span>
-          <span class="tag">Workforce Analytics</span>
-          <span class="tag">Power BI</span>
-          <span class="tag">Power Query</span>
-          <span class="tag">VBA</span>
-          <span class="tag">PowerShell</span>
-          <span class="tag">ADP</span>
-          <span class="tag">Ceridian</span>
-          <span class="tag">SAP SuccessFactors</span>
-          <span class="tag">SFTP Data Flows</span>
-          <span class="tag">Responsible AI</span>
+        <div class="cap-grid">
+          <article class="cap-item reveal">
+            <span class="num-label">01</span>
+            <h3 class="h-md">Strategic HR &amp; executive advisory</h3>
+            <p>Trusted advisor to senior leadership on workforce strategy, organizational effectiveness, and complex change.</p>
+            <ul>
+              <li>Workforce planning &amp; org design across multi-entity populations</li>
+              <li>M&amp;A and entity restructuring — readiness and integration</li>
+              <li>Succession planning, talent reviews, leadership development</li>
+              <li>Executive coaching and committee-level partnership</li>
+            </ul>
+          </article>
+
+          <article class="cap-item reveal">
+            <span class="num-label">02</span>
+            <h3 class="h-md">Total rewards &amp; governance</h3>
+            <p>Compensation strategy, pension governance, and payroll operations calibrated against WTW, AON, and Mercer benchmarks.</p>
+            <ul>
+              <li>Merit, bonus, equity cycles across regulated entities</li>
+              <li>Pension committee chair — fiduciary governance &amp; member outcomes</li>
+              <li>Multi-provincial payroll: ON, QC, BC, AB</li>
+              <li>Audit readiness: PwC, EY · regulators: OSFI, FINTRAC, IIROC</li>
+            </ul>
+          </article>
+
+          <article class="cap-item reveal">
+            <span class="num-label">03</span>
+            <h3 class="h-md">Systems, analytics &amp; automation</h3>
+            <p>Workday deployment, HRIS &amp; payroll data flows, and the analytics that turn it into decisions.</p>
+            <ul>
+              <li>HRIS: Workday, SuccessFactors, Ceridian, ADP</li>
+              <li>Analytics: Power BI, Tableau, Advanced Excel</li>
+              <li>Automation: Python, SQL, Power Query, VBA, APIs</li>
+              <li>Workforce simulations for headcount &amp; retention decisions</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <div class="section-title">
-        <h2>Contact</h2><span>Fastest way to reach me</span>
-      </div>
-
-      <div class="card">
-        <p class="meta">
-          Email: <a href="mailto:CR.ChrisRoss@gmail.com" style="color:var(--accent);font-weight:700">CR.ChrisRoss@gmail.com</a>
-          <span style="opacity:.55">·</span>
-          LinkedIn: <a href="https://www.linkedin.com/in/chris-ross-942a5017/" target="_blank" rel="noreferrer" style="color:var(--accent);font-weight:700">/in/chris-ross-942a5017</a>
-        </p>
-
-        <div class="grid cols-2" style="margin-top:12px">
-          <a class="btn primary" href="mailto:CR.ChrisRoss@gmail.com">Email</a>
-          <a class="btn" href="assets/Chris-Ross-Resume.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a>
+    <!-- PROJECTS -->
+    <section id="projects" class="bg-alt" aria-labelledby="proj-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Digital &amp; Operations</span>
+          <h2 id="proj-title" class="h-xl">The work behind the dashboards.</h2>
+          <p class="lead">Selected systems, integrations, and tooling that quietly keep cycles on schedule.</p>
         </div>
 
-        <div class="nav-cta" style="margin-top:10px">
-          <a class="btn" href="https://www.linkedin.com/in/chris-ross-942a5017/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <div class="proj-grid">
+          <article class="proj-card reveal">
+            <span class="label">Integration · Multi-vendor</span>
+            <h3>HR &amp; payroll automation stack</h3>
+            <p>Python, VBA, Power Query, and API integrations across payroll providers and HR systems — eliminating manual reconciliation, formalizing exception handling, standardizing inputs across cycles.</p>
+            <div class="stack">
+              <span class="chip">Python</span>
+              <span class="chip">VBA</span>
+              <span class="chip">Power Query</span>
+              <span class="chip">REST APIs</span>
+              <span class="chip">ADP</span>
+              <span class="chip">Ceridian</span>
+              <span class="chip">SuccessFactors</span>
+            </div>
+          </article>
+
+          <article class="proj-card reveal">
+            <span class="label">Deployment · 14 Countries</span>
+            <h3>Workday country lead — Canada</h3>
+            <p>Canada lead on a simultaneous 14-country Workday deployment. Configuration, data migration, change management, and go-live coordinated against a complex global program with parallel localization needs.</p>
+            <div class="stack">
+              <span class="chip">Workday</span>
+              <span class="chip">Data Migration</span>
+              <span class="chip">Change Mgmt</span>
+              <span class="chip">Multi-jurisdiction</span>
+            </div>
+          </article>
+
+          <article class="proj-card reveal">
+            <span class="label">Analytics · Decision Support</span>
+            <h3>Workforce insights &amp; forecasting</h3>
+            <p>Executive workforce dashboards and predictive simulations for headcount and retention decisions. Reframed monthly variance reporting from retrospective to forward-looking — contributed to $1.2M opex reduction.</p>
+            <div class="stack">
+              <span class="chip">Power BI</span>
+              <span class="chip">Tableau</span>
+              <span class="chip">SQL</span>
+              <span class="chip">Scenario Models</span>
+            </div>
+          </article>
+
+          <article class="proj-card reveal">
+            <span class="label">Governance · Responsible AI</span>
+            <h3>AI Ambassador program</h3>
+            <p>Chair the AI Ambassador leadership team — driving AI literacy, peer training, and adoption across HR and adjacent functions, with guardrails for data integrity, ethical use, and governance alignment.</p>
+            <div class="stack">
+              <span class="chip">Copilot</span>
+              <span class="chip">Claude</span>
+              <span class="chip">OpenAI</span>
+              <span class="chip">Open-source LLMs</span>
+              <span class="chip">Governance</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GOVERNANCE -->
+    <section aria-labelledby="gov-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Leadership &amp; Governance</span>
+          <h2 id="gov-title" class="h-xl">Beyond the day job.</h2>
+        </div>
+
+        <div class="gov">
+          <article class="gov-card reveal">
+            <span class="badge">Chair</span>
+            <h3>Canadian Pension Committee</h3>
+            <p>Accountable for fiduciary governance, plan design, and member outcomes across the Canadian operations — overseeing investment policy, plan performance, and regulatory compliance.</p>
+          </article>
+
+          <article class="gov-card reveal">
+            <span class="badge">Chair</span>
+            <h3>AI Ambassador Leadership Team</h3>
+            <p>Driving AI literacy, peer-led training, and adoption across HR and adjacent functions — pairing enablement with guardrails for ethical use, data integrity, and governance alignment.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="bg-alt" aria-labelledby="exp-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Experience</span>
+          <h2 id="exp-title" class="h-xl">Selected roles.</h2>
+        </div>
+
+        <div class="exp-list">
+
+          <article class="exp-block reveal">
+            <header class="exp-meta">
+              <div class="org">BMW Group Canada</div>
+              <div class="industry">Automotive &amp; Financial Services</div>
+            </header>
+            <div class="exp-roles">
+              <div class="role">
+                <div class="role-head">
+                  <span class="role-title">Manager, HR Planning &amp; Steering</span>
+                  <span class="dates">Nov 2024 — Present</span>
+                </div>
+                <div class="role-scope">BMW, MINI &amp; Rolls-Royce · 300+ associates · $40M HR budget · ON / QC / BC / AB payroll</div>
+                <ul>
+                  <li><strong>Own total rewards governance</strong> across three brands — compensation, bonus, pension, payroll — calibrated against WTW, AON, and Mercer benchmarks while maintaining internal equity and regulatory alignment.</li>
+                  <li>Reduced operating expenses <strong>$1.2M</strong> through workforce cost analysis and headcount discipline; reframed monthly variance reporting from retrospective to forward-looking.</li>
+                  <li>Architected the payroll &amp; operations automation stack (Python, VBA, Power Query, APIs) — <strong>50%+ cycle efficiency</strong>, eliminating manual reconciliation.</li>
+                  <li>Manage the $40M HR budget across planning cycles — personnel cost forecasts, opex, variance tracking.</li>
+                  <li>Lead audit readiness with <strong>PwC and EY</strong>; strengthened reporting frameworks, policy structures, and governance controls.</li>
+                  <li><strong>Chair, Canadian Pension Committee</strong> — fiduciary governance, plan design, member outcomes.</li>
+                  <li><strong>Chair, AI Ambassador leadership team</strong> — AI literacy, peer training, adoption.</li>
+                </ul>
+              </div>
+
+              <div class="role">
+                <div class="role-head">
+                  <span class="role-title">Manager, Human Resources Business Leader</span>
+                  <span class="dates">2020 — Nov 2024</span>
+                </div>
+                <div class="role-scope">Senior HR advisor to Sales &amp; Finance · 400+ associates across Canada, US, Japan · multi-entity</div>
+                <ul>
+                  <li><strong>Reframed total rewards</strong> across Canadian operations: market benchmarking, business cases, program restructuring — delivering <strong>$700K in annual savings</strong> without compromising market competitiveness.</li>
+                  <li>Reduced voluntary turnover <strong>10%+</strong> through targeted leadership development and engagement interventions.</li>
+                  <li>Lifted engagement scores <strong>15%</strong> over four years — highest in the region — using Qualtrics-based action planning tied to leader objectives.</li>
+                  <li>Owned the Canadian COVID relief program end-to-end, securing <strong>$3.5M+ in government subsidies</strong>.</li>
+                  <li>Led pension carrier transition and asset transfer, creating a unified associate experience.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="exp-block reveal">
+            <header class="exp-meta">
+              <div class="org">Mitsubishi UFJ Financial Group</div>
+              <div class="industry">Global Corporate &amp; Investment Banking</div>
+            </header>
+            <div class="exp-roles">
+              <div class="role">
+                <div class="role-head">
+                  <span class="role-title">AVP, Regional HR Business Partner</span>
+                  <span class="dates">2018 — 2020</span>
+                </div>
+                <div class="role-scope">Corporate Banking, IB, Securities, Risk · 400+ associates · 4 legal entities · OSFI / FINTRAC / IIROC</div>
+                <ul>
+                  <li><strong>Built the Canadian quantitative risk division from scratch</strong> — low-cost geo strategy, onboarded 25+ specialized quants in 12 months servicing New York and San Francisco trading floors.</li>
+                  <li>Directed annual compensation and payroll cycles for 400+ associates across four legal entities in a tightly regulated environment.</li>
+                  <li>Partnered directly with <strong>OSFI, FINTRAC, and IIROC</strong> stakeholders on compliance and operational readiness.</li>
+                  <li>Led talent reviews and succession planning across multiple entities, surfacing development plans for the regional executive team.</li>
+                </ul>
+              </div>
+
+              <div class="role">
+                <div class="role-head">
+                  <span class="role-title">Human Resources Manager</span>
+                  <span class="dates">2012 — 2018</span>
+                </div>
+                <div class="role-scope">Canada HR operations through entity conversion · portfolio scaled $2.5B → $40B+</div>
+                <ul>
+                  <li>Canada country lead for a simultaneous <strong>14-country Workday deployment</strong> — configuration, data migration, change management, go-live.</li>
+                  <li>Managed HR operations and payroll oversight through the <strong>subsidiary-to-branch entity conversion</strong> that unlocked balance sheet access and enabled Canadian commercial expansion.</li>
+                  <li>Led <strong>ADP-to-Ceridian payroll transition</strong>, strengthening controls and standardizing documentation.</li>
+                  <li>Built HR and payroll control frameworks to keep pace with rapid portfolio growth.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="exp-block reveal">
+            <header class="exp-meta">
+              <div class="org">AEGON Canada</div>
+              <div class="industry">Global Insurance</div>
+            </header>
+            <div class="exp-roles">
+              <div class="role">
+                <div class="role-head">
+                  <span class="role-title">Employee Experience &amp; Brand Lead</span>
+                  <span class="dates">2009 — 2010</span>
+                </div>
+                <ul>
+                  <li>Led employer brand and onboarding transformation for a global insurance carrier.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CREDENTIALS -->
+    <section id="credentials" aria-labelledby="cred-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Credentials</span>
+          <h2 id="cred-title" class="h-xl">Education &amp; designations.</h2>
+        </div>
+
+        <div class="cred-grid">
+          <div class="cred-section reveal">
+            <h3>Education</h3>
+            <ul class="cred-list">
+              <li>
+                <span class="title">MBA — Wilfrid Laurier University</span>
+                <span class="sub">2016 – 2019</span>
+              </li>
+              <li>
+                <span class="title">Bachelor of Commerce, HR Major — Toronto Metropolitan University</span>
+                <span class="sub">2010 – 2012</span>
+              </li>
+              <li>
+                <span class="title">Business Administration Diploma, HR &amp; Accounting — Durham College</span>
+                <span class="sub">2007 – 2010</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="cred-section reveal">
+            <h3>Designations</h3>
+            <ul class="cred-list">
+              <li>
+                <span class="title">Certified Human Resources Leader (CHRL)</span>
+                <span class="sub">HRPA · 2014</span>
+              </li>
+              <li>
+                <span class="title">National Payroll Institute — Member</span>
+                <span class="sub">NPI · 2020</span>
+              </li>
+              <li>
+                <span class="title">Insights Discovery Accredited Trainer (IDA)</span>
+                <span class="sub">2018</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STACK -->
+    <section class="bg-alt tight" aria-labelledby="stack-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Systems &amp; Technical</span>
+          <h2 id="stack-title" class="h-xl">Stack.</h2>
+        </div>
+
+        <div class="stack-grid">
+          <div class="stack-group reveal">
+            <h3>HRIS &amp; Payroll</h3>
+            <ul>
+              <li>Workday</li>
+              <li>SAP SuccessFactors</li>
+              <li>Ceridian Dayforce</li>
+              <li>ADP</li>
+            </ul>
+          </div>
+          <div class="stack-group reveal">
+            <h3>Analytics &amp; Reporting</h3>
+            <ul>
+              <li>Power BI</li>
+              <li>Tableau</li>
+              <li>Advanced Excel</li>
+              <li>Python · SQL</li>
+            </ul>
+          </div>
+          <div class="stack-group reveal">
+            <h3>Automation &amp; Tooling</h3>
+            <ul>
+              <li>Python (pandas, requests)</li>
+              <li>Power Query · VBA</li>
+              <li>PowerShell</li>
+              <li>REST APIs · SFTP</li>
+            </ul>
+          </div>
+          <div class="stack-group reveal">
+            <h3>AI &amp; Collaboration</h3>
+            <ul>
+              <li>Microsoft Copilot</li>
+              <li>Claude · OpenAI (incl. Codex)</li>
+              <li>Open-source models</li>
+              <li>Jira · Confluence · GitHub</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT (dark inverted block) -->
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div class="contact-grid">
+          <div class="reveal">
+            <span class="eyebrow">Contact</span>
+            <h2 id="contact-title" class="h-xl" style="margin-top:18px">
+              Open to senior HR conversations.
+            </h2>
+            <p class="lead" style="margin-top:18px; max-width:42ch">
+              Best reached by email or LinkedIn. Resume available below.
+            </p>
+          </div>
+
+          <div class="contact-links reveal">
+            <a class="contact-link" href="mailto:CR.ChrisRoss@gmail.com">
+              <div>
+                <div class="clabel">Email</div>
+                <div class="cval">CR.ChrisRoss@gmail.com</div>
+              </div>
+              <span class="arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="contact-link" href="https://www.linkedin.com/in/chris-ross-942a5017/" target="_blank" rel="noreferrer">
+              <div>
+                <div class="clabel">LinkedIn</div>
+                <div class="cval">/in/chris-ross-942a5017</div>
+              </div>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="contact-link" href="assets/Chris-Ross-Resume.pdf" target="_blank" rel="noreferrer">
+              <div>
+                <div class="clabel">Resume</div>
+                <div class="cval">Chris-Ross-Resume.pdf</div>
+              </div>
+              <span class="arrow" aria-hidden="true">↓</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <footer>
-      © <span id="y"></span> Chris Ross · Built on GitHub Pages
+      <div class="wrap-wide">
+        <div>© <span id="y"></span> Chris Ross · Toronto, ON</div>
+        <div>Press <span class="kbd">T</span> for theme · Built on GitHub Pages</div>
+      </div>
     </footer>
   </main>
 
   <script>
+    // Year
     document.getElementById("y").textContent = new Date().getFullYear();
 
+    // Theme
     const root = document.documentElement;
     const btn = document.getElementById("themeBtn");
     const icon = document.getElementById("themeIcon");
-    const label = document.getElementById("themeLabel");
 
-    function setTheme(theme) {
+    function setTheme(theme){
       root.setAttribute("data-theme", theme);
-      localStorage.setItem("theme", theme);
-      const isDark = theme === "dark";
-      icon.textContent = isDark ? "☀" : "☾";
-      label.textContent = isDark ? "Light" : "Dark";
+      try { localStorage.setItem("theme", theme); } catch(e){}
+      icon.textContent = theme === "dark" ? "☀" : "☾";
     }
 
-    const saved = localStorage.getItem("theme");
-    if (saved === "dark" || saved === "light") setTheme(saved);
+    let saved = null;
+    try { saved = localStorage.getItem("theme"); } catch(e){}
+    if (saved === "dark" || saved === "light") {
+      setTheme(saved);
+    } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
 
     btn.addEventListener("click", () => {
       const current = root.getAttribute("data-theme") === "dark" ? "dark" : "light";
@@ -643,13 +1295,26 @@
     });
 
     window.addEventListener("keydown", (e) => {
-      if (e.key.toLowerCase() === "t" && !e.metaKey && !e.ctrlKey && !e.altKey) {
+      if (e.key.toLowerCase() === "t" && !e.metaKey && !e.ctrlKey && !e.altKey && !e.target.matches("input, textarea")) {
         const current = root.getAttribute("data-theme") === "dark" ? "dark" : "light";
         setTheme(current === "dark" ? "light" : "dark");
       }
     });
 
-    if (!saved) setTheme("light");
+    // Scroll reveal
+    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("in");
+            io.unobserve(e.target);
+          }
+        });
+      }, { rootMargin: "0px 0px -10% 0px", threshold: 0.05 });
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    } else {
+      document.querySelectorAll(".reveal").forEach((el) => el.classList.add("in"));
+    }
   </script>
 </body>
 </html>
