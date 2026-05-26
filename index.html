@@ -306,18 +306,6 @@
       z-index:0;
     }
     .hero > .wrap{ position:relative; z-index:1 }
-    .hero-content{
-      max-width:920px;
-      display:flex; flex-direction:column;
-      gap:32px;
-    }
-    .hero .eyebrow{ display:flex; align-items:center; gap:10px; }
-    .hero .eyebrow::before{
-      content:"";
-      width:6px; height:6px; border-radius:50%;
-      background:var(--accent);
-      display:inline-block;
-    }
     .hero-actions{
       display:flex; gap:18px; align-items:center; flex-wrap:wrap;
       padding-top:8px;
@@ -708,26 +696,82 @@
       color:#a1a1a6;
     }
 
-    /* ====== HERO PORTRAIT (subtle, integrated) ====== */
-    .hero-portrait-row{
-      display:flex; align-items:center; gap:16px;
-      padding-bottom:8px;
+    /* ====== HERO LAYOUT — two-column with large portrait ====== */
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: clamp(40px, 5vw, 72px);
+      align-items:center;
     }
-    .hero-portrait{
-      width:44px; height:44px;
-      border-radius:50%;
-      object-fit:cover;
-      background:var(--bg-alt);
-      border:1px solid var(--line-soft);
+    @media (min-width: 920px){
+      .hero-grid{
+        grid-template-columns: 1.15fr .85fr;
+        gap: clamp(48px, 6vw, 96px);
+      }
     }
-    .hero-portrait-text{
+    .hero-text{
+      display:flex; flex-direction:column;
+      gap:28px;
+      order:2;
+    }
+    @media (min-width: 920px){ .hero-text{ order:1; } }
+    .hero-eyebrow-row{
+      display:flex; align-items:center; gap:10px;
       font-size:14px;
       color:var(--muted);
       letter-spacing:-.008em;
     }
-    .hero-portrait-text strong{
+    .hero-eyebrow-row::before{
+      content:"";
+      width:6px; height:6px; border-radius:50%;
+      background:var(--accent);
+      display:inline-block;
+      flex-shrink:0;
+    }
+    .hero-eyebrow-row strong{
       color:var(--ink);
       font-weight:500;
+    }
+
+    .hero-portrait-frame{
+      order:1;
+      width:100%;
+      display:flex;
+      justify-content:center;
+      position:relative;
+    }
+    @media (min-width: 920px){
+      .hero-portrait-frame{ order:2; justify-content:flex-end; }
+    }
+    .hero-portrait-large{
+      width:100%;
+      max-width: 480px;
+      aspect-ratio: 4/5;
+      object-fit:cover;
+      object-position: center 20%;
+      border-radius: 28px;
+      background:var(--bg-alt);
+      box-shadow:
+        0 1px 2px rgba(0,0,0,.04),
+        0 12px 32px rgba(0,0,0,.08),
+        0 36px 80px rgba(0,0,0,.12);
+      transition: transform .5s var(--ease);
+    }
+    [data-theme="dark"] .hero-portrait-large{
+      box-shadow:
+        0 1px 2px rgba(0,0,0,.4),
+        0 12px 32px rgba(0,0,0,.5),
+        0 36px 80px rgba(0,0,0,.6);
+    }
+    .hero-portrait-frame::after{
+      content:"";
+      position:absolute;
+      inset: 10% -8% -8% 10%;
+      background: radial-gradient(ellipse at center, color-mix(in srgb, var(--accent) 18%, transparent), transparent 65%);
+      filter: blur(60px);
+      z-index:-1;
+      opacity:.6;
+      pointer-events:none;
     }
 
     /* Subtle reveal on scroll */
@@ -774,44 +818,47 @@
     <!-- HERO -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap">
-        <div class="hero-content">
-          <div class="hero-portrait-row">
-            <img class="hero-portrait" src="assets/chris-ross.png" alt="Chris Ross" loading="eager" decoding="async" />
-            <div class="hero-portrait-text">
+        <div class="hero-grid">
+          <div class="hero-text">
+            <span class="hero-eyebrow-row">
               <strong>Chris Ross</strong>&nbsp;&nbsp;MBA, CHRL · Toronto, ON
+            </span>
+
+            <h1 id="hero-title" class="display">
+              HR&nbsp;built<br/>to&nbsp;scale.
+            </h1>
+
+            <p class="lead">
+              Senior HR leader with 15+ years advising executive teams in regulated industries — automotive financial services, global corporate &amp; investment banking, and insurance. Track record across Workday deployment, entity restructuring, total rewards transformation, and payroll automation.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary btn-lg" href="#highlights">See the work</a>
+              <a class="btn btn-ghost btn-lg" href="#experience">Experience &rsaquo;</a>
             </div>
           </div>
 
-          <h1 id="hero-title" class="display">
-            HR&nbsp;built<br/>to&nbsp;scale.
-          </h1>
-
-          <p class="lead">
-            Senior HR leader with 15+ years advising executive teams in regulated industries — automotive financial services, global corporate &amp; investment banking, and insurance. Track record across Workday deployment, entity restructuring, total rewards transformation, and payroll automation.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary btn-lg" href="#highlights">See the work</a>
-            <a class="btn btn-ghost btn-lg" href="#experience">Experience &rsaquo;</a>
+          <div class="hero-portrait-frame">
+            <img class="hero-portrait-large" src="assets/chris-ross.png" alt="Portrait of Chris Ross" loading="eager" decoding="async" />
           </div>
+        </div>
 
-          <div class="hero-stats">
-            <div class="hero-stat">
-              <span class="num">15+</span>
-              <span class="desc">Years in regulated industries</span>
-            </div>
-            <div class="hero-stat">
-              <span class="num">$40M</span>
-              <span class="desc">HR budget under management</span>
-            </div>
-            <div class="hero-stat">
-              <span class="num">14</span>
-              <span class="desc">Country Workday rollout</span>
-            </div>
-            <div class="hero-stat">
-              <span class="num">$40B+</span>
-              <span class="desc">Portfolio at peak tenure</span>
-            </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="num">15+</span>
+            <span class="desc">Years in regulated industries</span>
+          </div>
+          <div class="hero-stat">
+            <span class="num">$40M</span>
+            <span class="desc">HR budget under management</span>
+          </div>
+          <div class="hero-stat">
+            <span class="num">14</span>
+            <span class="desc">Country Workday rollout</span>
+          </div>
+          <div class="hero-stat">
+            <span class="num">$40B+</span>
+            <span class="desc">Portfolio at peak tenure</span>
           </div>
         </div>
       </div>
