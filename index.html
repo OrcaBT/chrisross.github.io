@@ -6,24 +6,24 @@
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
 
-  <title>Chris Ross — Senior HR Leader · MBA, CHRL</title>
-  <meta name="description" content="Chris Ross, MBA, CHRL — senior HR leader with 15+ years advising executive teams in regulated industries. Workday deployment, total rewards transformation, payroll automation, and workforce analytics across automotive financial services and global investment banking." />
+  <title>Chris Ross — Senior HR Leader &amp; Product Builder · MBA, CHRL</title>
+  <meta name="description" content="Chris Ross, MBA, CHRL — senior HR leader and product builder. Explore HR transformation projects and local-first AI software built through Gattaca." />
   <meta name="author" content="Chris Ross" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Chris Ross — Senior HR Leader" />
-  <meta property="og:description" content="15+ years building HR infrastructure that scales. Workday. Total rewards. Automation. Analytics." />
-  <meta property="og:image" content="assets/chris-ross.png" />
-  <meta property="og:url" content="https://chrisross.github.io/" />
+  <meta property="og:title" content="Chris Ross — Senior HR Leader &amp; Product Builder" />
+  <meta property="og:description" content="HR transformation, workforce analytics, and local-first AI products built through Gattaca." />
+  <meta property="og:image" content="https://orcabt.github.io/chrisross.github.io/assets/chris-ross.png" />
+  <meta property="og:url" content="https://orcabt.github.io/chrisross.github.io/" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Chris Ross — Senior HR Leader" />
-  <meta name="twitter:description" content="15+ years building HR infrastructure that scales." />
-  <meta name="twitter:image" content="assets/chris-ross.png" />
+  <meta name="twitter:title" content="Chris Ross — Senior HR Leader &amp; Product Builder" />
+  <meta name="twitter:description" content="HR transformation, workforce analytics, and local-first AI products built through Gattaca." />
+  <meta name="twitter:image" content="https://orcabt.github.io/chrisross.github.io/assets/chris-ross.png" />
 
-  <link rel="canonical" href="https://chrisross.github.io/" />
+  <link rel="canonical" href="https://orcabt.github.io/chrisross.github.io/" />
 
   <!-- Geist — closest free family to SF Pro -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,14 +41,14 @@
     "worksFor": { "@type": "Organization", "name": "BMW Group Canada" },
     "address": { "@type": "PostalAddress", "addressLocality": "Toronto", "addressRegion": "ON", "addressCountry": "CA" },
     "email": "mailto:CR.ChrisRoss@gmail.com",
-    "url": "https://chrisross.github.io/",
-    "sameAs": ["https://www.linkedin.com/in/chris-ross-942a5017/"],
+    "url": "https://orcabt.github.io/chrisross.github.io/",
+    "sameAs": ["https://www.linkedin.com/in/chris-ross-942a5017/", "https://github.com/OrcaBT"],
     "alumniOf": [
       { "@type": "CollegeOrUniversity", "name": "Wilfrid Laurier University" },
       { "@type": "CollegeOrUniversity", "name": "Toronto Metropolitan University" },
       { "@type": "CollegeOrUniversity", "name": "Durham College" }
     ],
-    "knowsAbout": ["Total Rewards","Workforce Analytics","Workday","HR Transformation","Pension Governance","Payroll Operations","Executive Compensation","M&A HR Integration"]
+    "knowsAbout": ["Total Rewards","Workforce Analytics","Workday","HR Transformation","Pension Governance","Payroll Operations","Executive Compensation","M&A HR Integration","AI Agent Orchestration","Product Strategy","Local-first Software"]
   }
   </script>
 
@@ -218,7 +218,7 @@
       transition: color .2s var(--ease);
     }
     .nav-links a:hover{ color:var(--accent); }
-    @media (min-width: 880px){ .nav-links{ display:flex } }
+    @media (min-width: 1100px){ .nav-links{ display:flex } }
     .nav-actions{ display:flex; gap:10px; align-items:center; }
 
     /* ====== BUTTONS ====== */
@@ -435,6 +435,118 @@
       background:var(--accent);
     }
 
+    /* ====== GATTACA SOFTWARE PRODUCTS ====== */
+    .software-showcase{
+      background:#0b0b0d;
+      color:#f5f5f7;
+      position:relative;
+      overflow:hidden;
+    }
+    .software-showcase::before{
+      content:"";
+      position:absolute;
+      width:720px;
+      height:720px;
+      right:-240px;
+      top:-320px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(41,151,255,.22), transparent 68%);
+      pointer-events:none;
+    }
+    .software-showcase .wrap{ position:relative; z-index:1; }
+    .software-showcase .h-xl,
+    .software-showcase h3{ color:#f5f5f7; }
+    .software-showcase .lead{ color:#a1a1a6; max-width:720px; }
+    .software-showcase .eyebrow{ color:#2997ff; }
+    .software-intro{
+      display:grid;
+      gap:28px;
+      margin-bottom:clamp(48px,6vw,80px);
+    }
+    @media (min-width: 900px){
+      .software-intro{ grid-template-columns:1.35fr .65fr; align-items:end; }
+    }
+    .software-intro-copy{ display:flex; flex-direction:column; gap:18px; }
+    .software-visit{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      justify-self:start;
+      padding:12px 20px;
+      border:1px solid #3a3a3c;
+      border-radius:var(--r-pill);
+      color:#f5f5f7;
+      font-size:14px;
+      transition:border-color .2s var(--ease), background .2s var(--ease);
+    }
+    .software-visit:hover{ border-color:#2997ff; background:rgba(41,151,255,.1); }
+    @media (min-width: 900px){ .software-visit{ justify-self:end; } }
+    .product-grid{ display:grid; gap:20px; }
+    @media (min-width: 860px){ .product-grid{ grid-template-columns:repeat(3,1fr); } }
+    .product-card{
+      min-height:430px;
+      padding:clamp(28px,3vw,40px);
+      border:1px solid #2c2c2e;
+      border-radius:var(--r-lg);
+      background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      transition:transform .3s var(--ease), border-color .3s var(--ease);
+    }
+    .product-card:hover{ transform:translateY(-4px); border-color:#4b4b50; }
+    .product-mark{
+      display:grid;
+      place-items:center;
+      width:44px;
+      height:44px;
+      border-radius:13px;
+      background:rgba(41,151,255,.14);
+      border:1px solid rgba(41,151,255,.26);
+      color:#2997ff;
+      font-family:var(--mono);
+      font-size:14px;
+      font-weight:500;
+    }
+    .product-card .label{ color:#86868b; }
+    .product-card h3{ font-size:27px; letter-spacing:-.025em; }
+    .product-card p{ color:#a1a1a6; font-size:15px; line-height:1.6; }
+    .product-stat{
+      display:flex;
+      align-items:baseline;
+      gap:8px;
+      margin-top:auto;
+      padding-top:20px;
+      border-top:1px solid #2c2c2e;
+    }
+    .product-stat strong{ color:#2997ff; font-size:25px; letter-spacing:-.025em; }
+    .product-stat span{ color:#86868b; font-size:11px; line-height:1.35; }
+    .product-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      color:#f5f5f7;
+      font-size:13px;
+      font-weight:500;
+    }
+    .product-link span{ color:#2997ff; transition:transform .2s var(--ease); }
+    .product-link:hover span{ transform:translateX(4px); }
+    .product-principles{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:1px;
+      margin-top:20px;
+      overflow:hidden;
+      border:1px solid #2c2c2e;
+      border-radius:var(--r-md);
+      background:#2c2c2e;
+    }
+    @media (min-width: 720px){ .product-principles{ grid-template-columns:repeat(4,1fr); } }
+    .product-principle{ padding:18px 20px; background:#111113; }
+    .product-principle strong{ display:block; color:#f5f5f7; font-size:13px; margin-bottom:3px; }
+    .product-principle span{ color:#86868b; font-size:11px; }
+
     /* ====== PROJECT CARDS ====== */
     .proj-grid{
       display:grid; gap:24px;
@@ -458,6 +570,24 @@
       color:var(--ink-2);
       line-height:1.55;
     }
+    .proj-card .outcome{
+      display:flex;
+      align-items:baseline;
+      gap:8px;
+      margin-top:auto;
+      padding-top:10px;
+      border-top:1px solid var(--line-soft);
+    }
+    .proj-card .outcome strong{
+      color:var(--accent);
+      font-size:20px;
+      letter-spacing:-.02em;
+    }
+    .proj-card .outcome span{
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.35;
+    }
     .stack{
       display:flex; flex-wrap:wrap; gap:6px;
       margin-top:8px;
@@ -472,6 +602,118 @@
       letter-spacing:-.005em;
     }
     [data-theme="dark"] .chip{ background:var(--line-soft); }
+
+    /* ====== REPRESENTATIVE WORK SAMPLES ====== */
+    .sample-note{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      max-width:760px;
+      margin:0 0 32px;
+      padding:14px 16px;
+      border:1px solid var(--line);
+      border-radius:var(--r-sm);
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.5;
+    }
+    .sample-note::before{
+      content:"i";
+      flex:0 0 auto;
+      display:grid;
+      place-items:center;
+      width:20px;
+      height:20px;
+      border-radius:50%;
+      background:var(--accent);
+      color:#fff;
+      font-family:var(--mono);
+      font-size:11px;
+      font-weight:600;
+    }
+    .sample-grid{ display:grid; gap:24px; }
+    @media (min-width: 940px){ .sample-grid{ grid-template-columns:repeat(3,1fr); } }
+    .sample-card{
+      overflow:hidden;
+      border:1px solid var(--line-soft);
+      border-radius:var(--r-lg);
+      background:var(--bg);
+    }
+    .sample-preview{
+      min-height:260px;
+      padding:24px;
+      background:var(--bg-alt);
+      border-bottom:1px solid var(--line-soft);
+    }
+    .sample-toolbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:20px;
+    }
+    .sample-toolbar strong{ font-size:12px; letter-spacing:-.006em; }
+    .sample-toolbar span{
+      font-family:var(--mono);
+      font-size:9px;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.05em;
+    }
+    .sample-body{ padding:28px; }
+    .sample-body h3{ font-size:22px; letter-spacing:-.022em; margin-bottom:10px; }
+    .sample-body p{ color:var(--ink-2); font-size:14px; line-height:1.55; }
+    .sample-body .stack{ margin-top:18px; }
+    .mini-kpis{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:18px; }
+    .mini-kpi{
+      padding:12px 10px;
+      border-radius:8px;
+      background:var(--bg);
+      border:1px solid var(--line-soft);
+    }
+    .mini-kpi strong{ display:block; font-size:16px; color:var(--accent); }
+    .mini-kpi span{ display:block; margin-top:3px; color:var(--muted); font-size:8px; text-transform:uppercase; letter-spacing:.04em; }
+    .mini-chart{ display:flex; align-items:flex-end; gap:7px; height:96px; padding:8px 4px 0; border-bottom:1px solid var(--line); }
+    .mini-chart i{
+      flex:1;
+      display:block;
+      min-width:8px;
+      border-radius:4px 4px 0 0;
+      background:color-mix(in srgb, var(--accent) 24%, var(--bg));
+      border:1px solid color-mix(in srgb, var(--accent) 36%, transparent);
+    }
+    .mini-chart i:nth-child(2n){ background:var(--accent); }
+    .flow{ display:flex; flex-direction:column; gap:8px; }
+    .flow-step{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:8px;
+      background:var(--bg);
+      border:1px solid var(--line-soft);
+      font-size:10px;
+      font-weight:500;
+    }
+    .flow-step b{
+      display:grid;
+      place-items:center;
+      width:20px;
+      height:20px;
+      border-radius:50%;
+      background:color-mix(in srgb, var(--accent) 13%, transparent);
+      color:var(--accent);
+      font-family:var(--mono);
+      font-size:9px;
+    }
+    .flow-step em{ margin-left:auto; color:var(--muted); font-size:8px; font-style:normal; text-transform:uppercase; }
+    .readiness{ width:100%; border-collapse:separate; border-spacing:0 7px; }
+    .readiness th{ padding:0 7px 2px; color:var(--muted); font-size:8px; text-align:left; text-transform:uppercase; letter-spacing:.04em; }
+    .readiness td{ padding:9px 7px; background:var(--bg); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft); font-size:9px; }
+    .readiness td:first-child{ border-left:1px solid var(--line-soft); border-radius:7px 0 0 7px; font-weight:500; }
+    .readiness td:last-child{ border-right:1px solid var(--line-soft); border-radius:0 7px 7px 0; }
+    .status-dot{ display:inline-block; width:7px; height:7px; margin-right:5px; border-radius:50%; background:#34c759; }
+    .status-dot.watch{ background:#ff9f0a; }
 
     /* ====== GOVERNANCE ====== */
     .gov{
@@ -798,7 +1040,9 @@
       <nav class="nav-links" aria-label="Primary">
         <a href="#highlights">Highlights</a>
         <a href="#capabilities">Capabilities</a>
+        <a href="#software">Software</a>
         <a href="#projects">Projects</a>
+        <a href="#samples">Samples</a>
         <a href="#experience">Experience</a>
         <a href="#credentials">Credentials</a>
         <a href="#contact">Contact</a>
@@ -829,7 +1073,7 @@
             </h1>
 
             <p class="lead">
-              Senior HR leader with 15+ years advising executive teams in regulated industries — automotive financial services, global corporate &amp; investment banking, and insurance. Track record across Workday deployment, entity restructuring, total rewards transformation, and payroll automation.
+              Senior HR leader with 15+ years advising executive teams in regulated industries — automotive financial services, global corporate &amp; investment banking, and insurance. Track record across Workday deployment, entity restructuring, total rewards transformation, and payroll automation. Alongside HR leadership, I build local-first AI and workflow products through Gattaca.
             </p>
 
             <div class="hero-actions">
@@ -968,13 +1212,63 @@
       </div>
     </section>
 
+    <!-- GATTACA SOFTWARE -->
+    <section id="software" class="software-showcase" aria-labelledby="software-title">
+      <div class="wrap">
+        <div class="software-intro reveal">
+          <div class="software-intro-copy">
+            <span class="eyebrow">Product Building · Gattaca.software</span>
+            <h2 id="software-title" class="h-xl">Complex technology, made useful.</h2>
+            <p class="lead">I build local-first AI and workflow products through Gattaca—turning agent orchestration, data tools, and repeatable business processes into software that founders, operators, and small businesses can use without a setup maze.</p>
+          </div>
+          <a class="software-visit" href="https://gattaca.software/" target="_blank" rel="noreferrer">Visit Gattaca <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card reveal">
+            <div class="product-mark" aria-hidden="true">CT</div>
+            <span class="label">AI Agents · Desktop Orchestration</span>
+            <h3>CodonTerminal</h3>
+            <p>A desktop cockpit for directing multiple AI coding agents across one body of work. It brings Codex and Claude Code into a coordinated terminal grid, then adds task planning, model assignment, autonomous dispatch, and a review gate.</p>
+            <div class="product-stat"><strong>16</strong><span>agent terminals in one workspace</span></div>
+            <a class="product-link" href="https://gattaca.software/products/codonterminal" target="_blank" rel="noreferrer">Explore CodonTerminal <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="product-mark" aria-hidden="true">PD</div>
+            <span class="label">Business Tools · Local-first Data</span>
+            <h3>PromptDeck</h3>
+            <p>A local workspace for creating and adapting small business tools in plain language. It combines persistent data, spreadsheet and database analysis, repeatable prompts, exports, and branded outputs in one approachable product.</p>
+            <div class="product-stat"><strong>6</strong><span>built-in business tools, plus a mini-app builder</span></div>
+            <a class="product-link" href="https://gattaca.software/products/prompt-deck" target="_blank" rel="noreferrer">Explore PromptDeck <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="product-mark" aria-hidden="true">MCP</div>
+            <span class="label">Coordination Layer · Local Infrastructure</span>
+            <h3>Codon MCP</h3>
+            <p>A shared planning and coordination layer for the coding agents already running on a user’s machine. Agents work from the same mission, task board, status model, usage record, and review process while credentials stay local.</p>
+            <div class="product-stat"><strong>7 + 3</strong><span>core and orchestration tools</span></div>
+            <a class="product-link" href="https://gattaca.software/mcp" target="_blank" rel="noreferrer">Explore Codon MCP <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+
+        <div class="product-principles reveal" aria-label="Gattaca product principles">
+          <div class="product-principle"><strong>Local-first</strong><span>Tools and data stay on the user’s machine.</span></div>
+          <div class="product-principle"><strong>Plain language</strong><span>Power without developer-only jargon.</span></div>
+          <div class="product-principle"><strong>Adaptable</strong><span>Software reshapes around the actual work.</span></div>
+          <div class="product-principle"><strong>User-owned</strong><span>Products designed to keep working locally.</span></div>
+        </div>
+      </div>
+    </section>
+
     <!-- PROJECTS -->
     <section id="projects" class="bg-alt" aria-labelledby="proj-title">
       <div class="wrap">
         <div class="section-head reveal">
           <span class="eyebrow">Digital &amp; Operations</span>
           <h2 id="proj-title" class="h-xl">The work behind the dashboards.</h2>
-          <p class="lead">Selected systems, integrations, and tooling that quietly keep cycles on schedule.</p>
+          <p class="lead">Selected transformations spanning strategy, systems, analytics, governance, and execution.</p>
         </div>
 
         <div class="proj-grid">
@@ -982,6 +1276,7 @@
             <span class="label">Integration · Multi-vendor</span>
             <h3>HR &amp; payroll automation stack</h3>
             <p>Python, VBA, Power Query, and API integrations across payroll providers and HR systems — eliminating manual reconciliation, formalizing exception handling, standardizing inputs across cycles.</p>
+            <div class="outcome"><strong>50%+</strong><span>cycle-efficiency improvement</span></div>
             <div class="stack">
               <span class="chip">Python</span>
               <span class="chip">VBA</span>
@@ -997,6 +1292,7 @@
             <span class="label">Deployment · 14 Countries</span>
             <h3>Workday country lead — Canada</h3>
             <p>Canada lead on a simultaneous 14-country Workday deployment. Configuration, data migration, change management, and go-live coordinated against a complex global program with parallel localization needs.</p>
+            <div class="outcome"><strong>14</strong><span>countries launched in parallel</span></div>
             <div class="stack">
               <span class="chip">Workday</span>
               <span class="chip">Data Migration</span>
@@ -1009,6 +1305,7 @@
             <span class="label">Analytics · Decision Support</span>
             <h3>Workforce insights &amp; forecasting</h3>
             <p>Executive workforce dashboards and predictive simulations for headcount and retention decisions. Reframed monthly variance reporting from retrospective to forward-looking — contributed to $1.2M opex reduction.</p>
+            <div class="outcome"><strong>$1.2M</strong><span>operating-expense reduction</span></div>
             <div class="stack">
               <span class="chip">Power BI</span>
               <span class="chip">Tableau</span>
@@ -1018,15 +1315,141 @@
           </article>
 
           <article class="proj-card reveal">
-            <span class="label">Governance · Responsible AI</span>
-            <h3>AI Ambassador program</h3>
-            <p>Chair the AI Ambassador leadership team — driving AI literacy, peer training, and adoption across HR and adjacent functions, with guardrails for data integrity, ethical use, and governance alignment.</p>
+            <span class="label">Total Rewards · Program Design</span>
+            <h3>Canadian rewards restructuring</h3>
+            <p>Led market benchmarking, business cases, and program redesign across Canadian automotive financial services while maintaining internal equity and market competitiveness.</p>
+            <div class="outcome"><strong>$700K</strong><span>annual recurring savings</span></div>
             <div class="stack">
-              <span class="chip">Copilot</span>
-              <span class="chip">Claude</span>
-              <span class="chip">OpenAI</span>
-              <span class="chip">Open-source LLMs</span>
+              <span class="chip">WTW</span>
+              <span class="chip">AON</span>
+              <span class="chip">Mercer</span>
+              <span class="chip">Business Cases</span>
               <span class="chip">Governance</span>
+            </div>
+          </article>
+
+          <article class="proj-card reveal">
+            <span class="label">Transformation · Regulated Banking</span>
+            <h3>Subsidiary-to-branch conversion</h3>
+            <p>Led HR operations and payroll through a structural entity conversion, building the controls and operational readiness required for Canadian commercial expansion.</p>
+            <div class="outcome"><strong>$40B+</strong><span>portfolio at peak tenure</span></div>
+            <div class="stack">
+              <span class="chip">Entity Readiness</span>
+              <span class="chip">Payroll Controls</span>
+              <span class="chip">Change Mgmt</span>
+              <span class="chip">OSFI</span>
+            </div>
+          </article>
+
+          <article class="proj-card reveal">
+            <span class="label">Talent Strategy · Quantitative Risk</span>
+            <h3>Canadian quant risk build-out</h3>
+            <p>Designed a low-cost location strategy and built a specialized quantitative risk division in Canada to support trading teams in New York and San Francisco.</p>
+            <div class="outcome"><strong>25+</strong><span>specialized hires in 12 months</span></div>
+            <div class="stack">
+              <span class="chip">Workforce Strategy</span>
+              <span class="chip">Org Design</span>
+              <span class="chip">Talent Acquisition</span>
+              <span class="chip">Risk</span>
+            </div>
+          </article>
+
+          <article class="proj-card reveal">
+            <span class="label">Operations · Public Policy</span>
+            <h3>Canadian COVID relief program</h3>
+            <p>Owned policy interpretation, eligibility analysis, executive alignment, documentation, and operational delivery for the Canadian relief program.</p>
+            <div class="outcome"><strong>$3.5M+</strong><span>government subsidies secured</span></div>
+            <div class="stack">
+              <span class="chip">Policy Analysis</span>
+              <span class="chip">Financial Modelling</span>
+              <span class="chip">Audit Trail</span>
+              <span class="chip">Delivery</span>
+            </div>
+          </article>
+
+          <article class="proj-card reveal">
+            <span class="label">Pension · Vendor Transition</span>
+            <h3>Pension carrier transition</h3>
+            <p>Led the carrier transition and asset-transfer workstream, coordinating governance, implementation, communications, and the move to a unified associate experience.</p>
+            <div class="outcome"><strong>Unified</strong><span>member experience</span></div>
+            <div class="stack">
+              <span class="chip">Pension</span>
+              <span class="chip">Vendor Mgmt</span>
+              <span class="chip">Asset Transfer</span>
+              <span class="chip">Communications</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- REPRESENTATIVE SAMPLES -->
+    <section id="samples" aria-labelledby="samples-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Representative Work Samples</span>
+          <h2 id="samples-title" class="h-xl">How the work takes shape.</h2>
+          <p class="lead">A closer look at the operating tools behind workforce decisions, controlled payroll cycles, and complex deployments.</p>
+        </div>
+
+        <p class="sample-note reveal">These representative samples were recreated with illustrative data to respect employer, employee, and vendor confidentiality. They demonstrate the structure and decision logic of the work—not original company records.</p>
+
+        <div class="sample-grid">
+          <article class="sample-card reveal">
+            <div class="sample-preview" aria-label="Illustrative workforce planning dashboard preview">
+              <div class="sample-toolbar"><strong>Workforce plan · FY outlook</strong><span>Illustrative</span></div>
+              <div class="mini-kpis">
+                <div class="mini-kpi"><strong>312</strong><span>FTE outlook</span></div>
+                <div class="mini-kpi"><strong>−2.8%</strong><span>vs. plan</span></div>
+                <div class="mini-kpi"><strong>$1.2M</strong><span>opportunity</span></div>
+              </div>
+              <div class="mini-chart" aria-hidden="true">
+                <i style="height:55%"></i><i style="height:63%"></i><i style="height:59%"></i><i style="height:76%"></i><i style="height:68%"></i><i style="height:84%"></i><i style="height:72%"></i><i style="height:92%"></i>
+              </div>
+            </div>
+            <div class="sample-body">
+              <h3>Workforce planning model</h3>
+              <p>Combines actuals, vacancies, planned hiring, attrition assumptions, and scenario levers to move executive reporting from variance explanation to forward decisions.</p>
+              <div class="stack"><span class="chip">Power BI</span><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Scenario Modelling</span></div>
+            </div>
+          </article>
+
+          <article class="sample-card reveal">
+            <div class="sample-preview" aria-label="Illustrative payroll control workflow preview">
+              <div class="sample-toolbar"><strong>Payroll control workflow</strong><span>Illustrative</span></div>
+              <div class="flow">
+                <div class="flow-step"><b>1</b>Standardize source files<em>Automated</em></div>
+                <div class="flow-step"><b>2</b>Validate totals and deltas<em>Control</em></div>
+                <div class="flow-step"><b>3</b>Route exceptions for review<em>Approval</em></div>
+                <div class="flow-step"><b>4</b>Reconcile provider output<em>Evidence</em></div>
+                <div class="flow-step"><b>5</b>Archive signed audit pack<em>Complete</em></div>
+              </div>
+            </div>
+            <div class="sample-body">
+              <h3>Payroll control workflow</h3>
+              <p>A controlled integration pattern that standardizes vendor inputs, highlights exceptions, reconciles outputs, and preserves approval evidence across each cycle.</p>
+              <div class="stack"><span class="chip">Python</span><span class="chip">Power Query</span><span class="chip">VBA</span><span class="chip">REST APIs</span></div>
+            </div>
+          </article>
+
+          <article class="sample-card reveal">
+            <div class="sample-preview" aria-label="Illustrative Workday rollout readiness tracker preview">
+              <div class="sample-toolbar"><strong>Country readiness · Canada</strong><span>Illustrative</span></div>
+              <table class="readiness">
+                <thead><tr><th>Workstream</th><th>Owner</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td>Data migration</td><td>HRIS</td><td><span class="status-dot"></span>Ready</td></tr>
+                  <tr><td>Payroll interface</td><td>Payroll</td><td><span class="status-dot watch"></span>Watch</td></tr>
+                  <tr><td>Security roles</td><td>IT / HR</td><td><span class="status-dot"></span>Ready</td></tr>
+                  <tr><td>Change network</td><td>HR</td><td><span class="status-dot"></span>Ready</td></tr>
+                  <tr><td>Cutover plan</td><td>PMO</td><td><span class="status-dot watch"></span>Watch</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="sample-body">
+              <h3>Deployment readiness view</h3>
+              <p>A country-level view that brings data, interfaces, security, change, and cutover into one decision forum for a coordinated multi-country launch.</p>
+              <div class="stack"><span class="chip">Workday</span><span class="chip">Data Migration</span><span class="chip">PMO</span><span class="chip">Change Mgmt</span></div>
             </div>
           </article>
         </div>
@@ -1288,6 +1711,13 @@
               <div>
                 <div class="clabel">LinkedIn</div>
                 <div class="cval">/in/chris-ross-942a5017</div>
+              </div>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="contact-link" href="https://github.com/OrcaBT" target="_blank" rel="noreferrer">
+              <div>
+                <div class="clabel">GitHub</div>
+                <div class="cval">github.com/OrcaBT</div>
               </div>
               <span class="arrow" aria-hidden="true">↗</span>
             </a>
